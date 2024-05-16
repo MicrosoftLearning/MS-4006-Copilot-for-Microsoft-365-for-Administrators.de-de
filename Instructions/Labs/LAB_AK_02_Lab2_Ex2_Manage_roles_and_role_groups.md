@@ -75,7 +75,7 @@ In der vorherigen Aufgabe haben Sie eine Administratorrolle direkt dem Benutzerk
 
 20. Um zu überprüfen, ob Lynne die Rollen geerbt hat, die „Rollengruppe für Benutzerverwaltung“ zugewiesen wurden, wählen Sie **Lynne Robbins** aus der Liste der aktiven Benutzer aus. 
 
-21. Im erscheinenden Bereich **Lynne Robbins** sollten auf der Registerkarte **Konto**, die standardmäßig angezeigt wird, die drei Benutzerverwaltungsrollen angezeigt werden, die Lynne zugewiesen wurden. Wählen Sie im Abschnitt** **Rollen** die Option **Rollen verwalten** aus.
+21. Im erscheinenden Bereich **Lynne Robbins** sollten auf der Registerkarte **Konto**, die standardmäßig angezeigt wird, die drei Benutzerverwaltungsrollen angezeigt werden, die Lynne zugewiesen wurden. Wählen Sie im Abschnitt **Rollen** die Option **Rollen verwalten** aus.
 
 22. Beachten Sie im erscheinenden Bereich **Administratorrollen verwalten** unter der Option **Admin Center-Zugriff** die drei ausgewählten Rollen und den Namen der Gruppe, aus der sie Lynne zugewiesen wurden. Beachten Sie außerdem, dass die drei Rollen ausgegraut sind. Das bedeutet, dass Sie die Auswahl der Rollen über dieses Fenster nicht aufheben können. Da die Rollen Lynne über eine Rollengruppe zugewiesen wurden, die diese Rollen enthielt, können Sie die Zuweisung der Rollen nur aufheben, indem Sie Lynne als Mitglied der Rollengruppe entfernen. Sie haben gerade überprüft, ob Lynne diese Rollen zugewiesen sind. Schließen Sie den Bereich **Administratorrollen verwalten**.
 
@@ -212,7 +212,11 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 11. Navigieren Sie in Ihrem **Edge**-Browser zu **https://portal.office.com**. 
 
-12. Sie beginnen mit der Anmeldung bei Microsoft 365 als **Joni Sherman**. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Geben Sie im Fenster **Kennwort eingeben** das **Microsoft 365-Mandantenkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat.
+12. Sie beginnen mit der Anmeldung bei Microsoft 365 als **Joni Sherman**. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. <br/>
+
+    **Wichtig:** Ihr Lab-Hostinganbieter hat dem MOD-Administratorkonto ein **Administratives Kennwort** zugewiesen, und Sie haben dem Konto von Holly Dickson beim Erstellen dieses Kontos das gleiche **Administratives Kennwort** zugewiesen. Ihr Lab-Hostinganbieter hat jedoch allen anderen vordefinierten Benutzerkonten ein anderes **Benutzerkennwort** zugewiesen. In Zukunft müssen Sie bei der Anmeldung als anderer Benutzer als MOD-Administrator oder Holly Dickson dieses **Benutzerkennwort** und NICHT das **Administrative Kennwort** eingeben. <br/>
+
+    Da Sie sich als Joni Sherman anmelden, geben Sie dieses **Benutzerkennwort** im Fenster **Kennwort eingeben** ein. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
 
 13. Aktivieren Sie im Fenster **Angemeldet bleiben?** das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. Wenn das Fenster **Kennwort speichern** angezeigt wird, wählen Sie **Nie** aus.
 
@@ -224,7 +228,9 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 17. Sie melden sich jetzt bei Microsoft 365 als Joni ab. Wählen Sie in **Microsoft Edge**oben rechts auf der Seite **Willkommen bei Microsoft 365** das Benutzersymbol für **Joni Sherman** (der Kreis in der oberen rechten Ecke mit dem Bild von Joni) und im angezeigten Fenster von **Joni Sherman** die Option **Abmelden** aus. 
 
-18. Sie melden sich jetzt wieder als **Lynne Robbins** bei Microsoft 365 an. In Ihrer aktuellen **Edge**-Browserregisterkarte sollte die Meldung **Joni, Sie sind jetzt abgemeldet** angezeigt werden. In diesem Fenster haben Sie die Möglichkeit, sich wieder als Joni oder als anderer Benutzer anzumelden. Wählen Sie **Zu einem anderen Konto wechseln** aus, und geben Sie im angezeigten Feld **E-Mail-Adresse** die Adresse **LynneR@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Wählen Sie dann **Anmelden** aus. Geben Sie im Fenster **Kennwort eingeben** das **Microsoft 365-Mandantenkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat.
+18. Sie melden sich jetzt wieder als **Lynne Robbins** bei Microsoft 365 an. In Ihrer aktuellen **Edge**-Browserregisterkarte sollte die Meldung **Joni, Sie sind jetzt abgemeldet** angezeigt werden. In diesem Fenster haben Sie die Möglichkeit, sich wieder als Joni oder als anderer Benutzer anzumelden. <br/>
+
+    Wählen Sie **Zu einem anderen Konto wechseln** aus, und geben Sie im angezeigten Feld **E-Mail-Adresse** die Adresse **LynneR@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Wählen Sie dann **Anmelden** aus. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie **Anmelden**. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus. 
 
 19. Wenn das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, wählen Sie zweimal den Vorwärtspfeil (>) und dann das Häkchen aus, um das Fenster zu schließen.
 
@@ -288,7 +294,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 43. Sie sollten alle Browserregisterkarten mit Ausnahme der Registerkarte **Abmelden** schließen, nachdem Sie abgemeldet wurden. Navigieren Sie auf der Registerkarte **Abmelden** zu **https://portal.office.com**. 
 
-44. Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus. Geben Sie im Fenster **Anmelden** **AlexW@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Geben Sie im Fenster **Kennwort eingeben** das **Microsoft 365-Mandantenkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat.  <br/>
+44. Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus. Geben Sie im Fenster **Anmelden** **AlexW@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein.  <br/>
 
     Das Fenster **Konto auswählen** sollte erscheinen, und es sollte eine Fehlermeldung angezeigt werden: **Ihr Konto wurde gesperrt. Wenden Sie sich an einen Mitarbeiter Ihrer Supportabteilung, um das Konto entsperren zu lassen.** Sie haben gerade überprüft, dass Alex (oder jemand, der an Alex‘ Benutzername und Kennwort gelangt ist) sich nicht anmelden kann. <br/>
 

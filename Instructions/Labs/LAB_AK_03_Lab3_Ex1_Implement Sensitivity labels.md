@@ -277,9 +277,9 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 19. Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus.
 
-20. Geben Sie im **Anmeldefenster****JoniS@xxxxxZZZZZZ.onmicrosoft** ein (wobei "xxxxxZZZZZZ" das Mandantenpräfix ihres Labhostinganbieters ist), und wählen Sie dann **Weiter**.
+20. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus.
 
-21. Geben Sie im Fenster **Kennwort eingeben** dasselbe **Verwaltungskennwort** ein, das von Ihrem Labhostinganbieter für das Mandantenadministratorkonto (d. h. das MOD-Administratorkonto) bereitgestellt wird, und wählen Sie dann **Anmelden**.
+21. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie dann **Anmelden**. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
 
 22. Wenn ein **Willkommensfenster** angezeigt wird, wählen Sie das X aus, um es zu schließen.
 
