@@ -6,11 +6,17 @@ In der folgenden Labübung nehmen Sie die Rolle von Holly Dickson ein, der neuen
 
 **Hinweis:** Die von Ihrem Labhostinganbieter bereitgestellte VM-Umgebung beinhaltet über 20 bestehende Microsoft 365-Benutzerkonten sowie eine große Anzahl bestehender lokaler Benutzerkonten. In diesem Kurs werden mehrere der bestehenden Microsoft 365-Benutzerkonten verwendet. Obwohl das MOD-Administratorkonto von Ihrem Labhostinganbieter erstellt wurde, erstellen Sie Holly Dicksons Benutzerkonto, da eine bewährte Methode darin besteht, die Microsoft 365-Rolle „Globaler Administrator“ mehr als einem Benutzer zuzuweisen. Dabei lernen Sie auch, ein Microsoft 365-Benutzerkonto zu erstellen, falls Sie mit dem Prozess nicht vertraut sind.
 
-Holly wurde dann vom CTO von Adatum aufgefordert, die Multi-Faktor-Authentifizierung (MFA), Passthrough-Authentifizierung (PTA) und Smart Lock von Microsoft Entra bereitzustellen. Diese drei Features tragen zur Verbesserung der Kennwortverwaltung in der gesamten Organisation bei, was der Vorbereitung auf Copilot for Microsoft 365 dient. PTA stellen Sie mit Microsoft Entra Cloud Sync bereit. Smart Lockout stellen Sie sie mithilfe der Gruppenrichtlinienverwaltung bereit. 
+Holly wurde dann vom CTO von Adatum aufgefordert, die Multi-Faktor-Authentifizierung (MFA) und Smart Lock von Microsoft Entra bereitzustellen. Diese Features tragen zur Verbesserung der Kennwortverwaltung in der gesamten Organisation bei, was der Vorbereitung auf Copilot for Microsoft 365 dient. Für Smart Lockout stellen Sie sie mithilfe der Gruppenrichtlinienverwaltung bereit. 
 
-Sie erstellen eine Richtlinie für bedingten Zugriff, um die MFA für alle Benutzer von Adatum bereitzustellen. Anschließend ändern Sie sie so, dass Holly und die ausgewählten Mitglieder ihres Microsoft 365-Pilotprojektteams ausgeschlossen werden. Dadurch müssen Sie keine MFA verwenden, wenn Sie sich mit diesen Konten anmelden, und Sie lernen, wie Sie Benutzer von einer Richtlinie für bedingten Zugriff ausschließen können. 
+**WICHTIGE MFA-ANKÜNDIGUNG:** Aufgrund einer kürzlichen Änderung von Microsoft an den in diesem Kurs verwendeten Microsoft 365-Testmandanten mussten wir eine entsprechende Änderung an diesem Lab vornehmen. <br/>
 
-**Hinweis:** Das Ausschließen bestimmter Benutzer von der Verwendung der MFA ist nichts, was Sie normalerweise in einem realen Szenario tun würden. Zum Zweck der Zeitersparnis in diesem Übungslab deaktivieren wir jedoch die MFA für die Testbenutzer. 
+**Ursprüngliches Labdesign:** Diese Labübung wurde ursprünglich so konzipiert, dass Sie als Holly Dickson eine Richtlinie für bedingten Zugriff erstellt haben, die MFA bei Adatum in Aufgabe 3 aktiviert hat. Dies ist die empfohlene Methode zur Aktivierung der MFA, wie Sie im Vorlesungsteil dieser Schulung gelernt haben. In Aufgabe 3 haben Sie eine Richtlinie für bedingten Zugriff erstellt, die MFA für alle Benutzer aktiviert hat, MIT AUSNAHME von Mitgliedern der Microsoft 365-Pilotprojektgruppe, die Sie in einer früheren Übung erstellt haben. Um Ihre Richtlinie in Aufgabe 4 zu testen, mussten Sie sich dann als Adele Vance anmelden. Da Adele kein Mitglied der Pilotprojektgruppe war, mussten Sie den MFA-Prozess abschließen, um sich bei Microsoft 365 anzumelden. Sie haben sich dann als Adele abgemeldet und wieder als Holly Dickson angemeldet. Da Holly Mitglied der Microsoft 365-Pilotprojektgruppe ist, musste sie nur ihren Benutzernamen und ihr Kennwort eingeben. Sie musste keine zweite Form der Authentifizierung mit MFA durchführen. Diese beiden Schritte in Aufgabe 4 haben Ihre Richtlinie für bedingten Zugriff verifiziert, d. h. nur Benutzer, die nicht Teil der Pilotprojektgruppe waren, mussten MFA verwenden. 
+
+Die andere Auswirkung dieser Richtlinie besteht darin, dass Sie MFA nicht bei der Anmeldung bei den restlichen Labs als andere Testbenutzer verwenden mussten, die auch Mitglieder der Microsoft 365-Pilotprojektgruppe waren. Ausschlüsse von der MFA können zwar aus praktischen Gründen festgelegt werden, abhängig von den geschäftlichen Anforderungen eines Unternehmens, aber Unternehmen sollten die damit verbundenen Risiken sorgfältig bewerten und sparsam Ausschlüsse vornehmen – und das stets in Übereinstimmung mit den Best Practices für Sicherheit. In diesem Lab haben Sie den Ausschluss der Pilotprojektgruppe aus zwei Gründen erstellt: Damit Sie lernen, wie Sie einen Ausschluss in eine Richtlinie für bedingten Zugriff vornehmen, aber auch zur Zeitersparnis in den Schulungslabs, wenn Sie sich als Testbenutzer anmelden. <br/>
+
+**Änderung beim Microsoft-Mandanten:** Microsoft hat jedoch seitdem eine Richtlinie für bedingten Zugriff im Microsoft 365-Testmandanten erstellt, der in dieser Übung verwendet wird, die MFA für alle Benutzerkonten vorschreibt. Leider hat die Richtlinie für bedingten Zugriff von Microsoft Vorrang vor der Richtlinie für bedingten Zugriff, die Sie in diesem Lab erstellen, um eine bestimmte Gruppe auszuschließen. Richtlinien für bedingten Zugriff in Microsoft Entra werden zusammen ausgewertet, und die Richtlinie mit der höchsten Priorität, die für einen Benutzer gilt, wird erzwungen. Wenn mehrere Richtlinien mit der gleichen Priorität vorhanden sind, gilt hier die restriktivste Richtlinie. In diesem Fall ist die Microsoft-Richtlinie restriktiver als die von Ihnen erstellte Richtlinie, da Ihre Benutzerausnahmen enthält. <br/>
+
+**Auswirkung auf diese Labübung:** Obwohl Microsoft in diesem Testmandanten MFA über eine Richtlinie für bedingten Zugriff erzwingt, erstellen Sie weiterhin Ihre eigene Richtlinie für bedingten Zugriff, wie sie ursprünglich in Aufgabe 3 entworfen wurde. Die Aufgabe wurde geringfügig im Vergleich zur ursprünglichen Version verändert, sodass Sie die Richtlinie sehen können, die Microsoft in den Testmandanten integriert hat. Abgesehen davon hat sich die von Ihnen erstellte Richtlinie nicht gegenüber dem ursprünglichen Design geändert: Sie schreibt MFA für alle Benutzer vor, mit Ausnahme der Mitglieder der Microsoft 365-Pilotprojektgruppe. Da die Richtlinie, die Microsoft in den Testmandanten des Labs integriert hat, jedoch die restriktivere der beiden Richtlinien ist, hat diese Richtlinie Vorrang bei der Erzwingung. Es gibt zwei Auswirkungen dieses Szenarios. Erstens müssen Sie aufgrund der Microsoft-Richtlinie MFA verwenden, wenn Sie sich im Rahmen der restlichen Labs als Testbenutzer anmelden. Zweitens, da Microsoft Entra Ihre Richtlinie ignoriert, ist es sinnlos, sie zu testen. Daher wurde die ursprüngliche Aufgabe 4 entfernt, die die von Ihnen erstellte Richtlinie für bedingten Zugriff getestet hat. Obwohl Sie Ihre Richtlinie jetzt nicht testen können, möchten wir, dass Sie sie in Aufgabe 3 erstellen, damit Sie diese Erfahrung für Ihre realen Bereitstellungen machen. 
 
 ### Aufgabe 1: Erstellen eines Benutzerkontos für die Microsoft 365-Administratorin von Adatum
 
@@ -18,9 +24,7 @@ Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kei
 
 **Lizenzhinweis:** Vor dem Erstellen des Hollys Kontos überprüfen Sie zuerst die Anzahl der verfügbaren Lizenzen. Dabei werden Sie feststellen, dass Ihr Labmandant zwar 20 Microsoft 365 E5-Lizenzen und 20 Enterprise Mobility + Security E5-Lizenzen bereitstellt, aber alle diese Lizenzen bereits den Benutzerkonten zugewiesen wurden, die von Ihrem Labhostinganbieter erstellt wurden. Daher müssen Sie zuerst eine Lizenz jeder Sorte von einem anderen Benutzer entziehen, damit Sie sie Holly zuweisen können.
 
-**Wichtig:** Als bewährte Methode in Ihrer realen Bereitstellung sollten Sie immer die Anmeldeinformationen des ersten globalen Administratorkontos notieren. In diesem Lab ist es das MOD-Administratorkonto, dessen Benutzername admin@xxxxxZZZZZZ.onmicrosoft.com ist. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihrem Labhostinganbieter zugewiesen ist. Sie sollten diese Kontoinformationen aus Sicherheitsgründen gut geschützt aufbewahren. **Dieses Konto sollte eine nicht personalisierte Identität** sein, die über die höchsten Berechtigungen verfügt, die in einem Mandanten möglich sind. Die MFA sollte **nicht** aktiviert werden, da sie nicht personalisiert ist. Da der Benutzername und das Kennwort für dieses erste globale Administratorkonto in der Regel von mehreren Benutzern gemeinsam verwendet werden, ist dieses Konto ein perfektes Ziel für Angriffe. Daher wird immer empfohlen, dass Organisationen personalisierte Dienstadministratorkonten (z. B. einen Exchange-Administrator, SharePoint-Administrator usw.) erstellen und so wenige persönliche globale Administratoren wie möglich haben. Die persönlichen globalen Administratoren, die Sie in Ihrer realen Bereitstellung erstellen, sollten jeweils einem einzelnen Benutzer (z. B. Holly Dickson) zugeordnet werden, und für jedes sollte die Multi-Faktor-Authentifizierung (MFA) von Microsoft Entra erzwungen werden. 
-
-Das heißt, dass Sie die MFA für Hollys Konto nicht aktivieren werden, da die Zeit in diesem Schulungskurs begrenzt ist, und wir möchten keine Labzeit verbrauchen, weil Sie gezwungen werden, bei jeder Anmeldung als Holly eine zweite Authentifizierungsmethode zu verwenden.
+**Wichtig:** Als bewährte Methode in Ihrer realen Bereitstellung sollten Sie immer die Anmeldeinformationen des ersten globalen Administratorkontos notieren. In diesem Lab ist es das MOD-Administratorkonto, dessen Benutzername admin@xxxxxZZZZZZ.onmicrosoft.com ist. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihrem Labhostinganbieter zugewiesen ist. Sie sollten diese Kontoinformationen aus Sicherheitsgründen gut geschützt aufbewahren. **Dieses Konto sollte eine nicht personalisierte Identität** sein, die über die höchsten Berechtigungen verfügt, die in einem Mandanten möglich sind. Die MFA sollte **nicht** aktiviert werden, da sie nicht personalisiert ist. Da der Benutzername und das Kennwort für dieses erste globale Administratorkonto in der Regel von mehreren Benutzern gemeinsam verwendet werden, ist dieses Konto ein perfektes Ziel für Angriffe. Daher wird immer empfohlen, dass Organisationen personalisierte Dienstadministratorkonten (z. B. einen Exchange-Administrator, SharePoint-Administrator usw.) erstellen und so wenige persönliche globale Administratoren wie möglich haben. Die persönlichen globalen Administratoren, die Sie in Ihrer realen Bereitstellung erstellen, sollten jeweils einem einzelnen Benutzer (z. B. Holly Dickson) zugeordnet werden, und für jedes sollte die Multi-Faktor-Authentifizierung (MFA) von Microsoft Entra erzwungen werden. Microsoft hat MFA also bereits standardmäßig für alle Benutzer in Ihrem Microsoft 365-Testmandanten aktiviert.
 
 1. Auf der VM **LON-CL1** sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Labübung noch geöffnet sein. Sie sollten bei Microsoft 365 als **MOD-Administrator** angemeldet sein. 
 
@@ -88,15 +92,11 @@ Das heißt, dass Sie die MFA für Hollys Konto nicht aktivieren werden, da die Z
 
 19. Bleiben Sie bei der Client-VM 1 (LON-CL1) angemeldet, und lassen Sie das Microsoft 365 Admin Center in Ihrem Browser für die nächste Aufgabe geöffnet.
 
-### Aufgabe 2: Einrichten von Microsoft 365-Benutzerkonten
+### Aufgabe 2: Hinzufügen von Holly zur Microsoft 365-Pilotprojektgruppe
 
-Nach Abschluss der vorherigen Aufgabe sollten Sie beim **Microsoft 365 Admin Center** weiterhin mit dem Konto **MOD-Administrator** angemeldet sein. In dieser Aufgabe beginnen Sie mit der Implementierung des Microsoft 365-Pilotprojekts von Adatum als Holly Dickson, der neuen Microsoft 365-Administratorin von Adatum. Daher beginnen Sie diese Aufgabe, indem Sie sich bei Microsoft 365 als MOD-Administrator abmelden und sich wieder mit dem neuen Microsoft 365-Konto von Holly anmelden. 
+Nach Abschluss der vorherigen Aufgabe sollten Sie beim **Microsoft 365 Admin Center** weiterhin mit dem Konto **MOD-Administrator** angemeldet sein. In dieser Aufgabe beginnen Sie mit der Implementierung des Microsoft 365-Pilotprojekts von Adatum als Holly Dickson, der neuen Microsoft 365-Administratorin von Adatum. Daher beginnen Sie diese Aufgabe, indem Sie sich bei Microsoft 365 als MOD-Administrator abmelden und sich wieder als Holly anmelden. 
 
-In der vorherigen Aufgabe haben Sie gesehen, dass Ihr Microsoft 365-Testmandant bereits mit einer Liste aktiver Benutzer ausgestattet ist. Als Holly Dickson, die Microsoft 365-Administratorin von Adatum, haben Sie die folgenden Mitglieder des Microsoft 365-Pilotprojektteams ausgewählt, um Sie bei der ersten Phase der Bereitstellung zu unterstützen: Alex Wilber, Joni Sherman, Lynne Robbins und Patti Fernandez. 
-
-Jeder Benutzer ist ein wichtiges Mitglied Ihres Pilotprojektteams. Obwohl die Benutzerkonten bereits in Microsoft 365 vorhanden sind, sollten Sie ihre Kennwörter so konfigurieren, dass sie sich bei Bedarf in kommenden Labübungen einfacher bei Microsoft 365 anmelden können. Außerdem ändern Sie das Kennwort für Adele Vance. Adele ist kein Mitglied des Microsoft 365-Pilotprojektteams, sondern wird für das Testen der MFA-Implementierung in einem späteren Lab verwendet. Sie weisen das gleiche **Administratorkennwort** zu, das von Ihrem Labhostinganbieter für das Mandantenadministratorkonto (d. h. das MOD-Administratorkonto) als Benutzerkennwort bereitgestellt wurde – genau wie beim Erstellen von Hollys Kontos.  
-
-**WICHTIG:** In der Praxis sollte natürlich nie das gleiche Kennwort für mehrere Benutzer verwendet werden. Wir tun es jedoch hier in der Schulungsumgebung, um die Dinge für Lernende einfacher zu machen, während sie die Labs absolvieren. In dieser Aufgabe lernen Sie also auch, wie ein Benutzerkennwort geändert wird.
+In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglieder des Pilotprojektteams von Adatum erstellt, sodass Sie ein benutzerdefiniertes Design für diese Gruppe erstellen können. In dieser Aufgabe fügen Sie Holly zu dieser Gruppe hinzu. 
 
 1. Auf der VM LON-CL1 sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Aufgabe noch geöffnet sein. Sie sollten bei Microsoft 365 als **MOD-Administrator** angemeldet sein. <br/>
 
@@ -112,7 +112,9 @@ Jeder Benutzer ist ein wichtiges Mitglied Ihres Pilotprojektteams. Obwohl die Be
 
 4. Geben Sie im Fenster **Anmelden** **Holly@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Wählen Sie **Weiter** aus.
 
-5. Geben Sie im Fenster **Kennwort eingeben** das **Administratorkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat. Wählen Sie dann **Anmelden** aus.
+5. Geben Sie im Fenster **Kennwort eingeben** das **Administratorkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat und das Sie Hollys Konto zugewiesen haben. Wählen Sie dann **Anmelden** aus. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.  <br/>
+
+    **Hinweis:** Ab diesem Zeitpunkt sind Holly und der MOD-Administrator die einzigen Benutzer, denen das von Ihrem Labhostinganbieter bereitgestellte **Administratorkennwort** zugewiesen wurde. Allen anderen Benutzern wird das vom Labhostinganbieter bereitgestellte **Benutzerkennwort** zugewiesen.
 
 6. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
@@ -161,111 +163,80 @@ Wie in Ihrer Schulung erwähnt wurde, gibt es drei Möglichkeiten, die MFA zu im
 
 1. Auf der VM LON-CL1 sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Aufgabe noch geöffnet sein. Sie sollten bei Microsoft 365 als **Holly Dickson** angemeldet sein.
    
-2. Wählen Sie im **Microsoft 365 Admin Center** unter dem Abschnitt **Admin Center** im Navigationsbereich die Option **Identität** aus. Dadurch wird das Microsoft Entra Admin Center auf einer neuen Browserregisterkarte geöffnet. 
+2. Wählen Sie im **Microsoft 365 Admin Center** unter dem Abschnitt **Admin Center** im Navigationsbereich die Option **Identität** aus. Dadurch wird das Microsoft Entra Admin Center auf einer neuen Browserregisterkarte geöffnet. Wenn das Fenster **Konto auswählen** angezeigt wird, wählen Sie **Holly Dicksons Konto** aus.
 
 3. Wählen Sie im **Microsoft Entra Admin Center** im Navigationsbereich die Option **Schutz** und dann **Bedingter Zugriff** aus.
 
-4. Wählen Sie auf der Seite **Bedingter Zugriff | Übersicht** die Option **Richtlinien** aus.
+4. Wählen Sie auf der Seite **Bedingter Zugriff | Übersicht** im mittleren Navigationsbereich **Richtlinien** aus.
 
-5. Überprüfen Sie auf der Seite **Bedingter Zugriff | Richtlinien** die Standardrichtlinien, die für Ihr Microsoft 365-Abonnement verfügbar sind. Wählen Sie auf der Menüleiste oben auf der Seite **+ Neue Richtlinie** aus.
+5. Überprüfen Sie auf der Seite **Bedingter Zugriff | Richtlinien** die Standardrichtlinien, die für Ihr Microsoft 365-Abonnement verfügbar sind. Beachten Sie die Richtlinie mit dem Titel **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter**. Dies ist die Richtlinie für bedingten Zugriff, die von Microsoft erstellt wurde, die MFA für alle Benutzer in allen Cloud-Apps vorschreibt. Wählen Sie diese Richtlinie aus, damit Sie sehen können, wie Microsoft die MFA für alle Benutzer in diesem Testmandanten erzwingt.
 
-6. Geben Sie im Fenster **Neue Richtlinie für bedingten Zugriff** den Text **MFA für alle Microsoft 365-Benutzer** im Feld **Name** ein.
+6. Wählen Sie auf der Seite **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter** unter der Gruppe **Benutzer** die Option **Alle Benutzer eingeschlossen und bestimmte Benutzer ausgeschlossen** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
 
-7. Zunächst definieren Sie die MFA-Anforderung für Benutzer. Wählen Sie unter der Gruppe **Benutzer** die Option **0 Benutzer und Gruppen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+7. Beachten Sie auf der Registerkarte **Einschließen**, dass **Alle Benutzer** ausgewählt ist. Um Ihre Neugier zu befriedigen, versuchen wir, diese Richtlinie zu ändern, indem Sie die MFA deaktivieren. Wählen Sie **Keine** und dann die Schaltfläche **Speichern** aus. <br/>
 
-8. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Benutzer** aus. Beachten Sie die angezeigte Warnmeldung. Diese werden Sie in den nächsten beiden Schritten beheben.
+    **Beobachten Sie, was passiert:** Am oberen Rand der Seite wurde kurz ein Feld mit der Meldung **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter konnte nicht aktualisiert werden** angezeigt. Das System hat Sie dann zurück zur Seite **Bedingter Zugriff | Richtlinien** geführt. Wenn diese Meldung nicht angezeigt wird, wiederholen Sie diesen Schritt.  <br/>
 
-9. Wählen Sie die Registerkarte **Ausschließen** aus. Um eine Systemsperre zu vermeiden, wie in der vorherigen Warnmeldung angegeben, sollten Sie Ihre globalen Administratoren ausschließen – in diesem Fall Holly. Holly möchte auch die anderen Microsoft 365-Pilotprojektgruppenmitglieder zur Beschleunigung der Tests ausschließen. Sobald Microsoft 365 live ist, entfernt Holly die Pilotprojektgruppe aus der Liste „Ausschließen“ in dieser Richtlinie für bedingten Zugriff und schließt nur sich selbst und mehrere andere globale Administratoren aus. Für den Moment möchte Holly jedoch die gesamte Gruppe ausschließen. <br/>
+    Das gleiche geschieht, wenn Sie auf der Registerkarte **Einschließen** die Option **Benutzer und Gruppen** auswählen und bestimmte Benutzer oder Gruppen anstelle aller Benutzer auswählen. Tatsächlich hat Microsoft eine Sicherheitsfirewall integriert, sodass bei einem Versuch, diese Richtlinie zu ändern, ein Fehler auftritt, wenn Sie versuchen, die Richtlinie zu speichern. 
+
+8. Microsoft hat einen Ausschluss in diese Richtlinie integriert. Werfen wir einen Blick darauf. Wählen Sie auf der Seite **Richtlinien** die Richtlinie **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter** und dann **Alle Benutzer eingeschlossen und bestimmte Benutzer ausgeschlossen** aus. Wählen Sie dieses Mal die Registerkarte **Ausschließen** aus. 
+
+9. Beachten Sie, dass Microsoft das Kontrollkästchen **Verzeichnisrollen** aktiviert hat. Wählen Sie das Feld unter dieser Option aus. Im Menü der Rollen, die Sie aus der MFA ausschließen können, ist die einzige von Microsoft ausgewählte Rolle **Verzeichnissynchronisierungskonten**. Diese Rolle wird automatisch dem Microsoft Entra Connect Sync-Dienstkonto zugewiesen und soll nicht anderweitig verwendet werden. Es ist eine spezielle Rolle, die nur zum Ausführen von Verzeichnissynchronisierungsaufgaben berechtigt ist. Diese Rolle ist entscheidend für die Synchronisierung einer lokalen Active Directory Domain Services-Instanz (AD DS) mit Microsoft Entra ID, wodurch Identitäten koexistieren können. Microsoft schreibt keine MFA für diese Rolle vor, da der Synchronisierungsdienst ohne Unterbrechungen ausgeführt werden muss, die durch MFA-Aufforderungen verursacht werden können. Darüber hinaus ist dieses Dienstkonto mit sehr eingeschränkten Berechtigungen konfiguriert und wird nicht für interaktive Anmeldungen verwendet, wodurch das Sicherheitsrisiko reduziert ist.   <br/>
+
+    Wie bei dem vorherigen Schritt, in dem Sie versucht haben, die MFA-Einstellung so zu ändern, dass keine Benutzer oder ausgewählte Benutzer eingeschlossen werden, können Sie nun versuchen, andere Rollen auszuwählen, um die MFA-Einstellung zu umgehen. Es wird jedoch derselbe Fehler mit der Meldung **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter konnte nicht aktualisiert werden** angezeigt, wenn Sie versuchen, die Richtlinie zu speichern. Die Sicherheitsfirewall von Microsoft lässt keine Änderung dieser Richtlinie für bedingten Zugriff zu, die sich auf diejenigen auswirkt, die MFA verwenden müssen.
+
+10. Wenn die Seite **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter** noch geöffnet ist, wählen Sie in der oberen Ecke das **X** aus, um sie zu schließen. Kehren Sie dann zur Seite **Bedingter Zugriff | Richtlinien** zurück. Falls Sie versucht haben, eine Änderung an der Richtlinie zu speichern, ist der Versuch fehlgeschlagen, und Sie sollten bereits auf der Seite **Bedingter Zugriff | Richtlinien** sein.
+
+11. Wählen Sie auf der Seite **Bedingter Zugriff | Richtlinien**, in der Menüleiste oben die Option **+ Neue Richtlinie** aus.
+
+12. Geben Sie im Fenster **Neue Richtlinie für bedingten Zugriff** den Text **MFA für alle Microsoft 365-Benutzer** im Feld **Name** ein.
+
+13. Zunächst definieren Sie die MFA-Anforderung für Benutzer. Wählen Sie unter der Gruppe **Benutzer** die Option **0 Benutzer und Gruppen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+
+14. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Benutzer** aus. Beachten Sie die angezeigte Warnmeldung. Diese werden Sie in den nächsten beiden Schritten beheben.
+
+15. Wählen Sie die Registerkarte **Ausschließen** aus. Um eine Systemsperre zu vermeiden, wie in der vorherigen Warnmeldung angegeben, sollten Sie Ihre globalen Administratoren ausschließen – in diesem Fall Holly. Holly möchte auch die anderen Microsoft 365-Pilotprojektgruppenmitglieder zur Beschleunigung der Tests ausschließen. Sobald Microsoft 365 live ist, entfernt Holly die Pilotprojektgruppe aus der Liste „Ausschließen“ in dieser Richtlinie für bedingten Zugriff und schließt nur sich selbst und mehrere andere globale Administratoren aus. Für den Moment möchte Holly jedoch die gesamte Gruppe ausschließen. <br/>
 
     Wählen Sie dazu **Benutzer und Gruppen** aus. 
 
-10. Wählen Sie im angezeigten Fenster **Ausgeschlossene Benutzer und Gruppen auswählen** die Microsoft 365-Pilotprojektgruppe aus. Die Registerkarte **Alle** wird standardmäßig angezeigt. Um die Pilotprojektgruppe schnell zu finden, wählen Sie die Registerkarte **Gruppen** aus. Aktivieren Sie in der Liste der aktiven Gruppen das Kontrollkästchen neben der Gruppe **M365 pilot project**, und aktivieren Sie dann die Schaltfläche **Auswählen** unten im Fenster. Beachten Sie im Fenster **Neue Richtlinie für bedingten Zugriff** die Meldung, die unter dem Abschnitt **Benutzer** angezeigt wird. 
+16. Wählen Sie im angezeigten Fenster **Ausgeschlossene Benutzer und Gruppen auswählen** die Microsoft 365-Pilotprojektgruppe aus. Die Registerkarte **Alle** wird standardmäßig angezeigt. Um die Pilotprojektgruppe schnell zu finden, wählen Sie die Registerkarte **Gruppen** aus. Aktivieren Sie in der Liste der aktiven Gruppen das Kontrollkästchen neben der Gruppe **M365 pilot project**, und aktivieren Sie dann die Schaltfläche **Auswählen** unten im Fenster. Beachten Sie im Fenster **Neue Richtlinie für bedingten Zugriff** die Meldung, die unter dem Abschnitt **Benutzer** angezeigt wird. 
 
-11. Sie definieren nun die MFA-Anforderung für alle Cloud-Apps. Wählen Sie unter dem Abschnitt **Zielressourcen** die Option **Keine Zielressourcen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+17. Sie definieren nun die MFA-Anforderung für alle Cloud-Apps. Wählen Sie unter dem Abschnitt **Zielressourcen** die Option **Keine Zielressourcen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
 
-12. Beachten Sie auf der Registerkarte **Einschließen**, dass die Standardeinstellung **Keine** ist. Wenn Sie diese Einstellung nicht geändert haben, benötigt keine der Cloud-Apps die MFA – und das schließt Microsoft 365 ein. Selbst wenn Sie diese Richtlinie erstellt und die Option ausgewählt haben, die MFA in Schritt 17 zu erzwingen, aber diese Einstellung unter **Zielressourcen** auf **Keine** festgelegt ist, dann müsste kein Benutzer, der sich bei Microsoft 365 anmeldet, MFA verwenden. <br/>
+18. Wählen Sie das Dropdownfeld **Wählen Sie aus, worauf diese Richtlinie angewendet werden soll.** aus, um die verschiedenen Optionen im Dropdownmenü anzuzeigen. Wählen Sie **Cloud-Apps** aus. 
 
-    Wählen Sie die Option **Apps auswählen** aus. Wählen Sie unter der Gruppe **Auswählen** die Option **Keine** aus. Scrollen Sie im angezeigten Bereich **Cloud-Apps auswählen** durch die Liste der Apps, um alle Apps zu sehen, für die Sie MFA vorschreiben könnten. **Wählen Sie KEINE der Apps aus.** Wir scrollen durch diese Liste, um ein Gefühl dafür zu bekommen, wie präzise Sie vorgehen können, falls Sie beschließen, die MFA auf bestimmte Apps zu beschränken.  <br/>
+19. Beachten Sie auf der Registerkarte **Einschließen**, dass die Standardeinstellung **Keine** ist. Wenn Sie diese Einstellung nicht geändert haben, benötigt keine der Cloud-Apps die MFA – und das schließt Microsoft 365 ein. Selbst wenn Sie diese Richtlinie erstellt und die Option ausgewählt haben, die MFA für alle Benutzer zu erzwingen, aber diese Einstellung unter **Zielressourcen** auf **Keine** festgelegt ist, dann müsste kein Benutzer, der sich bei Microsoft 365 anmeldet, MFA verwenden. <br/>
 
-    Für Adatum möchte Holly die MFA für alle Cloud-Apps erzwingen, was in der Regel ein häufigeres Geschäftsszenario ist als die Auswahl bestimmter Apps. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Cloud-Apps** aus. Adatum schließt keine Cloud-Apps aus der Multi-Faktor-Authentifizierung aus. Sie können die Registerkarte **Ausschließen** auswählen, wenn Sie die darin enthaltenen Optionen sehen möchten. Wählen Sie jedoch KEINE Cloud-Apps zum Ausschluss aus. 
+    Wählen Sie auf der Registerkarte **Einschließen** die Option **Apps auswählen** aus. Dadurch werden zwei Abschnitte angezeigt: **Filter bearbeiten** und **Auswählen**. Wählen Sie unter dem Abschnitt **Auswählen** die Option **Keine** aus. Scrollen Sie im angezeigten Bereich **Cloud-Apps auswählen** durch die Liste der Apps, um alle Apps zu sehen, für die Sie MFA vorschreiben könnten. **Wählen Sie KEINE der Apps aus.** Wir scrollen durch diese Liste, um ein Gefühl dafür zu bekommen, wie präzise Sie vorgehen können, falls Sie beschließen, die MFA auf bestimmte Apps zu beschränken.  <br/>
 
-13. Schließlich definieren Sie die MFA-Anforderung für alle Benutzeranmeldungsstandorte. In einigen Szenarios schreiben Organisationen möglicherweise nur die MFA vor, wenn sich ein Benutzer von einem nicht vertrauenswürdigen Standort anmeldet. Adatum schreibt jedoch die MFA für alle eingeschlossenen Benutzer vor, unabhängig davon, wo sie sich anmelden. <br/>
+    Für Adatum möchte Holly die MFA für alle Cloud-Apps erzwingen, was in der Regel ein häufigeres Geschäftsszenario ist als die Auswahl bestimmter Apps. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Cloud-Apps** aus. Adatum schließt keine Cloud-Apps aus der Multi-Faktor-Authentifizierung aus. Sie können die Registerkarte **Ausschließen** auswählen, um die dortigen Optionen zu sehen. Sie funktioniert im Wesentlichen genauso wie die Registerkarte **Einschließen**. Sie können diese Registerkarte anzeigen, aber KEINE Cloud-Apps zum Ausschluss auswählen. 
 
-    Wählen Sie unter **Bedingungen** die Option **0 Bedingungen ausgewählt** aus. Dadurch wird eine Liste der potenziellen Bedingungen angezeigt, auf die die Richtlinie überprüft. Wählen Sie für diese Labübung unter der Bedingung **Standorte** die Option **Nicht konfiguriert** aus. Dadurch werden die Umschaltfläche **Konfigurieren** und zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+20. Schließlich definieren Sie die MFA-Anforderung für alle Benutzeranmeldungsstandorte. In einigen Szenarios schreiben Organisationen möglicherweise nur die MFA vor, wenn sich ein Benutzer von einem nicht vertrauenswürdigen Standort anmeldet. Adatum möchte jedoch die MFA für alle eingeschlossenen Benutzer erzwingen, unabhängig davon, wo sie sich anmelden. <br/>
 
-14. Legen Sie die Umschaltfläche **Konfigurieren** auf **Ja**fest, wodurch die beiden Registerkarten aktiviert werden. 
+    Wählen Sie unter **Bedingungen** die Option **0 Bedingungen ausgewählt** aus. Dadurch wird eine Liste der potenziellen Bedingungen angezeigt, auf die die Richtlinie überprüft. Wählen Sie für diese Labübung unter der Bedingung **Standorte** die Option **Nicht konfiguriert** aus. Dadurch werden die Umschaltfläche **Konfigurieren** und zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**. Beide Registerkarten sind derzeit deaktiviert.
 
-15. Überprüfen Sie auf der Registerkarte **Einschließen**, ob **Alle Standorte** ausgewählt ist (wählen Sie die Option bei Bedarf aus). Wählen Sie die Registerkarte **Ausschließen** aus. Wenn Ihre Organisation bestimmte IP-Adressen oder Adressbereiche als „vertrauenswürdig“ erkennt, können Sie die MFA-Anforderung ausschließen, wenn sich ein Benutzer von einem dieser Standorte anmeldet. Adatum möchte jedoch die MFA für alle Benutzeranmeldungen erzwingen, unabhängig von ihrem Standort. Das gilt sowohl für interne als auch für externe Benutzeranmeldungen. Überprüfen Sie, ob die Option **Ausgewählte Standorte** ausgewählt ist, und vergewissern Sie sich, dass im Abschnitt **Auswählen** **Keine** steht. Indem keine Standorte angegeben werden, stellt diese Einstellung sicher, dass keine Standorte von der MFA ausgeschlossen werden. 
+21. Legen Sie die Umschaltfläche **Konfigurieren** auf **Ja**fest, wodurch die beiden Registerkarten aktiviert werden. 
 
-16. Wählen Sie unter dem Abschnitt **Zugriffssteuerungen** unter der Gruppe **Gewähren** die Option **0 Steuerungen ausgewählt** aus. Dadurch wird der Bereich **Erteilen** angezeigt.
+22. Überprüfen Sie auf der Registerkarte **Einschließen**, ob **Alle Standorte** ausgewählt ist (wählen Sie die Option bei Bedarf aus). Wählen Sie die Registerkarte **Ausschließen** aus. Wenn Ihre Organisation bestimmte IP-Adressen oder Adressbereiche als „vertrauenswürdig“ erkennt, können Sie die MFA-Anforderung ausschließen, wenn sich ein Benutzer von einem dieser Standorte anmeldet. Adatum möchte jedoch die MFA für alle Benutzeranmeldeversuche erzwingen, unabhängig von ihrem Standort. Das gilt sowohl für interne als auch für externe Benutzeranmeldungen. Überprüfen Sie, ob die Option **Ausgewählte Standorte** ausgewählt ist, und vergewissern Sie sich, dass im Abschnitt **Auswählen** **Keine** steht. Indem keine Standorte angegeben werden, stellt diese Einstellung sicher, dass keine Standorte von der MFA ausgeschlossen werden. 
 
-17. Überprüfen Sie im angezeigten Bereich **Gewähren**, ob die Option **Zugriff gewähren** ausgewählt ist. Wählen Sie sie bei Bedarf aus. Aktivieren Sie dann das Kontrollkästchen **Multi-Faktor-Authentifizierung erforderlich**. Beachten Sie alle anderen verfügbaren Zugriffssteuerungen, die mit dieser Richtlinie aktiviert werden können. Für diese Richtlinie benötigen Sie nur die MFA. Wählen Sie die Schaltfläche **Auswählen** unten im Bereich **Gewähren** aus, die den Bereich schließt. 
+23. Wählen Sie unter dem Abschnitt **Zugriffssteuerungen** unter der Gruppe **Gewähren** die Option **0 Steuerungen ausgewählt** aus. Dadurch wird der Bereich **Erteilen** angezeigt.
 
-18. Wählen Sie unten im Fenster **Neu** im Feld **Richtlinie aktivieren** die Option **Ein** aus.
+24. Überprüfen Sie im angezeigten Bereich **Gewähren**, ob die Option **Zugriff gewähren** ausgewählt ist. Wählen Sie sie bei Bedarf aus. Aktivieren Sie dann das Kontrollkästchen **Multi-Faktor-Authentifizierung erforderlich**. Beachten Sie alle anderen verfügbaren Zugriffssteuerungen, die mit dieser Richtlinie aktiviert werden können. Für diese Richtlinie benötigen Sie nur die MFA. Wählen Sie die Schaltfläche **Auswählen** unten im Bereich **Gewähren** aus, die den Bereich schließt. 
 
-19. Beachten Sie die Option, die unten auf der Seite angezeigt wird und Sie warnt, sich nicht selbst auszusperren. Wählen Sie die Option **Ich habe verstanden, dass mein Konto von dieser Richtlinie betroffen ist. Ich möchte dennoch fortfahren.** aus. Tatsächlich wird Holly nicht betroffen sein, da sie Mitglied der M365-Pilotprojektgruppe ist, die von dieser Richtlinie ausgeschlossen ist.
+25. Wählen Sie unten im Fenster **Neu** im Feld **Richtlinie aktivieren** die Option **Ein** aus.
 
-20. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
+26. Beachten Sie die Option, die unten auf der Seite angezeigt wird und Sie warnt, sich nicht selbst auszusperren. Wählen Sie die Option **Ich habe verstanden, dass mein Konto von dieser Richtlinie betroffen ist. Ich möchte dennoch fortfahren.** aus. Tatsächlich wird Holly nicht betroffen sein, da sie Mitglied der M365-Pilotprojektgruppe ist, die von dieser Richtlinie ausgeschlossen ist.
 
-21. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status ** auf **Ein** festgelegt ist.
+27. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
 
-22. Bleiben Sie bei LON-CL1 angemeldet, und lassen alle Ihre Microsoft Edge-Browserregisterkarten für die nächste Aufgabe geöffnet.
+28. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status ** auf **Ein** festgelegt ist.
 
-### Aufgabe 4: Testen der MFA für einen eingeschlossenen und ausgeschlossenen Benutzer
+29. Bleiben Sie bei LON-CL1 angemeldet, und lassen alle Ihre Microsoft Edge-Browserregisterkarten für die nächste Aufgabe geöffnet.
 
-Um die soeben erstellte Richtlinie für bedingten Zugriff zu testen, melden Sie sich bei Microsoft 365 als Holly ab, und melden Sie sich dann wieder als Adele Vance an. Adele ist kein Mitglied der M365-Pilotprojektgruppe, daher sollte Microsoft Entra bei der Anmeldung die MFA erzwingen. Sobald Sie sich als Adele angemeldet und sich vergewissert haben, dass die MFA funktioniert, melden Sie sich als Adele ab und dann wieder als Holly an. Da Holly ein Mitglied der M365-Pilotprojektgruppe ist, die von der Verwendung der MFA in der Richtlinie für bedingten Zugriff ausgeschlossen wurde, sollten Sie die MFA bei der Anmeldung als Holly nicht verwenden müssen. 
+**Hinweis:** Wie bereits erwähnt, gibt es keine Möglichkeit, Ihre Richtlinie für bedingten Zugriff im aktuellen Microsoft 365-Testmandanten zu testen. Die Richtlinie für bedingten Zugriff von Microsoft erzwingt MFA für alle Benutzer. Wenn Sie über mehrere Richtlinien verfügen, die MFA erfordern, gilt die restriktivste Richtlinie. In diesem Fall ist die Microsoft-Richtlinie restriktiver als die Richtlinie, die Sie soeben erstellt haben, die Ausnahmen für die Mitglieder der Pilotprojektgruppe enthielt. Obwohl Sie Ihre Richtlinie nicht mit diesem Testmandanten testen können, empfehlen wir Ihnen, diese Erfahrung beim Erstellen einer Richtlinie für bedingten Zugriff zu nutzen, um die MFA in Ihren realen Microsoft 365-Bereitstellungen zu erzwingen.
 
-**Wichtig:** Um die MFA zu implementieren, müssen Sie Ihr Mobiltelefon verwenden, um einen Prüfcode zu erhalten, damit Sie ihn als zweite Authentifizierungsform bei Ihrem Mandanten eingeben können. Wenn Sie kein Mobiltelefon haben, können Sie Ihre Richtlinie für bedingten Zugriff trotzdem testen. Bei der Anmeldung als Adele Vance erzwingt das System, dass Sie sich mit einer zweiten Authentifizierungsform anmelden müssen. An diesem Punkt können Sie die Anmeldung einfach abbrechen und sich dann wieder als Holly anmelden, die keine MFA benötigt. Obwohl Sie die MFA-Anmeldung nicht abschließen, wissen Sie, dass das System sie beim Versuch erzwingt, sich als Adele anzumelden.
 
-1. Auf der VM LON-CL1 sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Aufgabe noch geöffnet sein. Sie sollten bei Microsoft 365 als **Holly Dickson** angemeldet sein. Sie beginnen mit der Abmeldung von Microsoft 365. Wählen Sie auf der Registerkarte **Microsoft 365 Admin Center** den Namen von Holly in der oberen rechten Ecke Ihres Browsers aus. Wählen Sie im angezeigten Fenster **Holly Dickson** die Option **Abmelden** aus. <br/>
-    
-    **Wichtig:** Nachdem Sie sich abgemeldet haben, schließen Sie Ihre Browsersitzung, um den Cache zu löschen, und öffnen Sie dann eine neue Microsoft Edge-Browsersitzung. 
-    
-2. Wählen Sie auf der Taskleiste das **Edge**-Symbol aus, um eine neue Browsersitzung zu öffnen. Wechseln Sie in Ihrem Browser zur **Microsoft Office-Startseite**, indem Sie die folgende URL in die Adressleiste eingeben: **https://portal.office.com/**. 
-
-3. Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus. 
-
-4. Geben Sie im Fenster **Anmelden** **AdeleV@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus. Geben Sie im Fenster **Kennwort eingeben** das Administratorkennwort ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat. Wählen Sie dann **Anmelden** aus.
-
-5. Da MFA für alle Benutzer mit Ausnahme der Mitglieder der M365-Pilotprojektgruppe (zu denen Adele nicht zählt) aktiviert ist, wird das Fenster **Weitere Informationen erforderlich** angezeigt. Wählen Sie **Weiter** aus. Dadurch wird die **Microsoft Authenticator**-Seite geöffnet. Diese ist der Ausgangspunkt für die Anmeldung mit MFA. <br/>
-
-    **Wichtig:** Wenn Sie kein Mobiltelefon besitzen, ist das der weiteste Punkt, wenn Sie versuchen, sich als Adele anzumelden. Obwohl Sie die Anmeldung nicht abschließen können, haben Sie überprüft, ob der erste Teil Ihrer Richtlinie für bedingten Zugriff funktioniert, da Adele sich mit MFA anmelden muss. Schließen Sie an diesem Punkt Ihre Edge-Browsersitzung, und fahren Sie dann mit Schritt 15 fort, an dem Sie sich wieder als Holly anmelden.
-
-6. Auf der angezeigten Seite **Microsoft Authenticator** können Sie diese mobile App herunterladen oder eine andere Methode für die MFA-Verifizierung verwenden. Für die Zwecke dieses Labs empfehlen wir Ihnen, Ihr Mobiltelefon zu verwenden, damit Sie keine Zeit aufwenden müssen, um die Microsoft Authenticator-App zu installieren, die Sie nach diesem Schulungskurs möglicherweise nicht mehr verwenden werden. Wählen Sie die Option **Ich möchte eine andere Methode einrichten.** unten auf der Seite aus. **Wichtig:** Verwechseln Sie diesen Link nicht mit der darüber angezeigten Option **Ich möchte eine andere Authentifikator-App verwenden**. 
-
-7. Wählen Sie im daraufhin angezeigten Dialogfeld **Andere Methode auswählen** den Dropdownpfeil im Feld **Welche Methode möchten Sie verwenden?** aus, und wählen Sie **Telefon** und dann **Bestätigen** aus. 
-
-8. Wählen Sie im angezeigten Fenster **Telefon** unter **Welche Telefonnummer möchten Sie verwenden?** Ihr Land oder Ihre Region aus, und geben Sie dann im Feld daneben Ihre Telefonnummer ein (im Format **nnn-nnn-nnnn**). Überprüfen Sie, ob die Option **Code empfangen** ausgewählt ist, und wählen Sie dann **Weiter** aus.
-
-9. Rufen Sie den Prüfcode aus der Textnachricht ab, die an Ihr Mobiltelefon gesendet wird.
-
-10. Geben Sie im Fenster **Telefon** den sechsstelligen Prüfcode in das Codefeld ein, und wählen Sie dann **Weiter** aus. Wenn im Fenster **Telefon** eine Meldung angezeigt wird, dass Ihr Telefon erfolgreich registriert wurde, wählen Sie **Weiter** aus.
-
-11. Wählen Sie auf der Seite **Erfolg!** die Option **Fertig** aus.
-
-12. Wenn das Dialogfeld **Angemeldet bleiben?** angezeigt wird, aktivieren Sie das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. 
-
-13. Wählen Sie auf der Registerkarte **Startseite | Microsoft 365** das **Word**-Symbol aus, das in der Spalte der App-Symbole auf der linken Seite des Bildschirms angezeigt wird. Dadurch wird **Microsoft Word** auf einer neuen Browserregisterkarte geöffnet. Dadurch wird überprüft, ob Sie nach der Anmeldung mit MFA auf eine Microsoft 365-App zugreifen können.  <br/>
-
-    **Wichtig:** Sie haben nun überprüft, ob der erste Teil der Richtlinie für bedingten Zugriff, die Sie erstellt haben, funktioniert. Die Richtlinie schreibt vor, dass sich Benutzer, die kein Mitglied des Microsoft 365-Pilotprojektteams sind, mit MFA anmelden müssen. Sie haben überprüft, ob das funktioniert, als Sie sich als Adele angemeldet haben. Sie melden sich jetzt als Adele ab und als Holly wieder an. Dabei überprüfen Sie, ob der zweite Teil der Richtlinie für bedingten Zugriff ebenfalls funktioniert. Sie sollten die MFA bei der Anmeldung als Holly NICHT verwenden müssen, da sie Mitglied der M365-Pilotprojektgruppe ist, die von der MFA-Anforderung in der Richtlinie für bedingten Zugriff ausgeschlossen ist.
-
-14. Wählen Sie auf der Registerkarte **Microsoft 365 Admin Center** das Symbol für das Konto von Adele in der oberen rechten Ecke Ihres Browsers aus. Wählen Sie im angezeigten Fenster **Adele Vance** die Option **Abmelden** aus. <br/>
-    
-    **Wichtig:** Nachdem Sie sich abgemeldet haben, schließen Sie Ihre Browsersitzung, um den Cache zu löschen, und öffnen Sie dann eine neue Microsoft Edge-Browsersitzung. 
-    
-15. Wählen Sie auf der Taskleiste das **Edge**-Symbol aus, um eine neue Browsersitzung zu öffnen. Wechseln Sie in Ihrem Browser zur **Microsoft Office-Startseite**, indem Sie die folgende URL in die Adressleiste eingeben: **https://portal.office.com/**. 
-
-16. Wählen Sie im Fenster **Konto auswählen** **Holly@xxxxxZZZZZZ.onmicrosoft.com** aus, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus. Geben Sie im Fenster **Kennwort eingeben** das Administratorkennwort ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat. Wählen Sie dann **Anmelden** aus.
-
-17. Da die MFA für alle Benutzer mit Ausnahme der Mitglieder des M365-Pilotprojektteams (zu denen Holly zählt) erforderlich ist, wird die MFA nicht erzwungen. Da die MFA nicht erforderlich ist, zeigt das System die Seite **Startseite | Microsoft 365** an. Wählen Sie das Symbol **Admin** aus, um zum **Microsoft 365 Admin Center** zu navigieren. <br/>
-
-    **Wichtig:** Sie haben nun überprüft, ob der zweite Teil der Richtlinie für bedingten Zugriff, die Sie erstellt haben, funktioniert. Die Richtlinie schließt Mitglieder der Microsoft 365-Pilotprojektgruppe von der Anmeldung mit MFA aus. Holly ist Mitglied dieser Gruppe, und sie musste sich nicht mit MFA anmelden.
-
-18. Bleiben Sie bei LON-CL1 angemeldet, und lassen Sie das **Microsoft 365 Admin Center** in Ihrem Browser geöffnet.
-
-  
-
-### Aufgabe 5: Bereitstellen von Microsoft Entra Smart Lockout
+### Aufgabe 4: Bereitstellen von Microsoft Entra Smart Lockout
 
 Der CTO von Adatum hat Sie gebeten, Microsoft Entra Smart Lockout bereitzustellen. Dieses Feature hilft dabei, Angreifer auszusperren, die versuchen, Ihre Benutzerkennwörter zu erraten oder Brute-Force-Methoden zu verwenden, um in Ihr Netzwerk zugelassen zu werden. Smart Lockout kann Anmeldungen gültiger Benutzer erkennen und anders behandeln als Anmeldungen von Angreifern und anderen unbekannten Quellen. 
 
@@ -301,7 +272,7 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 10. Im Dialogfeld **Anmelden** müssen Sie sich als Holly Dickson anmelden. Geben Sie **Holly@xxxxxZZZZZZ.onmicrosoft.com**ein, wobei xxxxxZZZZZZ das Mandantenpräfix ist, das von Ihrem Labhostinganbieter zugewiesen wurde. Wählen Sie **Weiter** aus. <br/>
 
-11. Geben Sie im Dialogfeld **Kennwort eingeben** das eindeutige **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus.
+11. Geben Sie im Dialogfeld **Kennwort eingeben** das eindeutige **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
 
 12. Aktivieren Sie im Dialogfeld **Angemeldet bleiben?** das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. Wählen Sie im daraufhin angezeigten Dialogfeld **Kennwort speichern** die Option **Nie** aus.
 
@@ -361,7 +332,7 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 27. Melden Sie sich im Fenster **Anmelden** als Patti Fernandez an. Geben Sie **pattif@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihnen von Ihrem Labhostinganbieter zugewiesen wurde, und wählen Sie dann **Weiter** aus. 
 
-28. Geben Sie im Fenster **Kennwort eingeben** eine beliebige Mischung aus Buchstaben ein, und wählen Sie dann **Anmelden** aus. Sie sehen, dass die Fehlermeldung „Ungültiges Kennwort“ angezeigt wird. 
+28. Geben Sie im Fenster **Kennwort eingeben** eine beliebige Mischung aus Buchstaben und Zahlen ein, und wählen Sie dann **Anmelden** aus. Sie sehen, dass die Fehlermeldung „Ungültiges Kennwort“ angezeigt wird. 
 
     Wiederholen Sie diesen Schritt noch zweimal. 
     
@@ -371,7 +342,7 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 29. Sie dürfen sich erst nach der **Sperrdauer von 90 Sekunden**, die Sie zuvor festgelegt haben, erneut als Patti anmelden. <br/>
 
-    Nachdem Sie gesperrt wurden, warten Sie 90 Sekunden, und melden Sie sich dann wieder als **pattif@xxxxxZZZZZZ.onmicrosoft.com** an. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihnen vom Labhostinganbieter zugewiesen wurde. Geben Sie im Feld **Kennwort** das Kennwort von Patti ein, bei dem es sich um das **Administratorkennwort** handelt, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat. Überprüfen Sie, ob Sie sich erfolgreich als Patti anmelden können.
+    Nachdem Sie gesperrt wurden, warten Sie 90 Sekunden, und melden Sie sich dann wieder als **pattif@xxxxxZZZZZZ.onmicrosoft.com** an. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihnen vom Labhostinganbieter zugewiesen wurde. Geben Sie im Feld **Kennwort** das Kennwort von Patti ein. Dabei handelt es sich um das **Benutzerkennwort**, das von Ihrem Labhostinganbieter bereitgestellt wird. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus. Überprüfen Sie, ob Sie sich erfolgreich als Patti anmelden können.
 
 30. Sobald die Anmeldung erfolgreich war, können Sie alle geöffneten Anwendungen schließen. Das ist Ihre letzte Labübung mit dem LON-DC1-Domänencontroller.
  
