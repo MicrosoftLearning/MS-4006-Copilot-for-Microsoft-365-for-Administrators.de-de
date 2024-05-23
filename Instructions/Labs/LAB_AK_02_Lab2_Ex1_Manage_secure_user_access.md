@@ -36,7 +36,7 @@ Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kei
 
 5. Wählen Sie auf der Seite **Aktive Benutzer** in der Liste der Benutzer **Christie Cline** aus. Wählen Sie Christies verlinkten Namen und nicht das Kontrollkästchen neben ihrem Namen aus.
 
-6. Im erscheinenden Bereich **Christie Cline** wird standardmäßig die Registerkarte **Konto** angezeigt. Wählen Sie die Registerkarte **Lizenzen und Apps** aus. Deaktivieren Sie unter **Lizenzen (2)** die Kontrollkästchen neben **Enterprise Mobility + Security E5** und **Microsoft 365 E5**, und wählen Sie dann **Änderungen speichern** aus. Nachdem die Änderungen gespeichert wurden, schließen Sie den Bereich **Christie Cline**. 
+6. Im erscheinenden Bereich **Christie Cline** wird standardmäßig die Registerkarte **Konto** angezeigt. Wählen Sie die Registerkarte **Lizenzen und Apps** aus. Deaktivieren Sie unter **Lizenzen (2)** die Kontrollkästchen neben **Enterprise Mobility + Security E5** und **Microsoft 365 E5**, und wählen Sie dann **Änderungen speichern** aus. Nachdem die Änderungen gespeichert wurden, schließen Sie den Bereich **Christie Cline**.
 
 7. Sie können jetzt ein Benutzerkonto für Holly Dickson erstellen, die die neue Microsoft 365-Administratorin von Adatum ist. Dabei weisen Sie Holly die Microsoft 365-Rolle „Globaler Administrator“ zu, die ihr globalen Zugriff auf die meisten Verwaltungsfeatures und -daten in Microsoft-Onlinediensten gewährt. Außerdem weisen Sie Holly die beiden Lizenzen zu, die Sie Christie Cline gerade entzogen haben. <br/>
 
@@ -157,9 +157,13 @@ In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglie
 23. Bleiben Sie bei LON-CL1 angemeldet, und öffnen Sie das **Microsoft 365 Admin Center** in Ihrem Browser für die nächste Aufgabe.
 
 
-### Aufgabe 3: Bereitstellen der MFA mithilfe einer Richtlinie für bedingten Zugriff
+### Aufgabe 3: Erstellen einer Richtlinie für bedingten Zugriff zum Implementieren von MFA
+
+**WICHTIG:** Diese Aufgabe beginnt mit der Untersuchung der Richtlinie für bedingten Zugriff, die Microsoft zum Implementieren von MFA für alle Benutzer erstellt hat. Ihr Lernpartner verwendet jedoch möglicherweise Testmandanten, die noch nicht auf dem Stand der jüngsten Änderung der MFA-Richtlinie sind. Wenn Sie nicht nach jeder Benutzeranmeldung aufgefordert wurden, MFA durchzuführen, ist für Ihren Testmandanten keine MFA erforderlich. In diesem Fall wird die von Microsoft erstellte MFA-Richtlinie nicht in Ihrer Richtlinienliste angezeigt. Wenn das bei Ihrem Mandanten der Fall ist, überspringen Sie die Schritte, die diese Richtlinie überprüfen. 
 
 Wie in Ihrer Schulung erwähnt wurde, gibt es drei Möglichkeiten, die MFA zu implementieren: mit Richtlinien für bedingten Zugriff, mit Sicherheitsstandardeinstellungen und mit der Legacymethode „MFA pro Benutzer“ (nicht für größere Organisationen empfohlen). In dieser Übung aktivieren Sie die MFA über eine Richtlinie für bedingten Zugriff, was die von Microsoft empfohlene Methode darstellt. Adatum hat Holly angewiesen, die MFA für alle Microsoft 365-Benutzer zu aktivieren – sowohl intern als auch extern. Zum Testen der Microsoft 365-Pilotprojektimplementierung von Adatum möchte Holly jedoch die Mitglieder der M365-Pilotprojektgruppe davon ausschließen, dass die MFA zur Anmeldung verwendet werden muss. Nach Abschluss des Pilotprojekts aktualisiert Holly die Richtlinie so, dass der Ausschluss dieser Gruppe aus der MFA-Anforderung entfernt wird. Die Richtlinie enthält auch zwei weitere Anforderungen. Sie schreibt die MFA für alle Cloud-Apps vor und erzwingt diese auch dann, wenn sich ein Benutzer von einem vertrauenswürdigen Standort anmeldet. 
+
+**Hinweis:** Obwohl Sie in dieser Aufgabe eine Richtlinie für bedingten Zugriff erstellen, die MFA aktiviert, aktivieren Sie sie NICHT. Einige Lernende verwenden möglicherweise einen Mandanten, der MFA erfordert. In diesem Fall wird diese Richtlinie nicht angewendet. Doch selbst wenn jeder Lernende in Ihrem Kurs einen Mandanten verwendet, der keine MFA erfordert, werden Sie Ihre Richtlinie trotzdem nicht aktivieren. Der Zweck dieser Übung besteht darin, Erfahrung mit dem Erstellen einer Richtlinie zu sammeln, die MFA aktiviert, statt mit der MFA-Authentifizierung selbst. Es wird davon ausgegangen, dass Sie damit vertraut sind. Daher haben wir uns entschieden, dass Lernende ihre Richtlinie nicht aktivieren, was den besten Kompromiss angesichts der potenziellen Mandantensituation in Ihrem Kurs bietet. 
 
 1. Auf der VM LON-CL1 sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Aufgabe noch geöffnet sein. Sie sollten bei Microsoft 365 als **Holly Dickson** angemeldet sein.
    
@@ -169,7 +173,9 @@ Wie in Ihrer Schulung erwähnt wurde, gibt es drei Möglichkeiten, die MFA zu im
 
 4. Wählen Sie auf der Seite **Bedingter Zugriff | Übersicht** im mittleren Navigationsbereich **Richtlinien** aus.
 
-5. Überprüfen Sie auf der Seite **Bedingter Zugriff | Richtlinien** die Standardrichtlinien, die für Ihr Microsoft 365-Abonnement verfügbar sind. Beachten Sie die Richtlinie mit dem Titel **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter**. Dies ist die Richtlinie für bedingten Zugriff, die von Microsoft erstellt wurde, die MFA für alle Benutzer in allen Cloud-Apps vorschreibt. Wählen Sie diese Richtlinie aus, damit Sie sehen können, wie Microsoft die MFA für alle Benutzer in diesem Testmandanten erzwingt.
+5. Überprüfen Sie auf der Seite **Bedingter Zugriff | Richtlinien** die Standardrichtlinien, die für Ihr Microsoft 365-Abonnement verfügbar sind. Beachten Sie die Richtlinie mit dem Titel **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter**. Dies ist die Richtlinie für bedingten Zugriff, die von Microsoft erstellt wurde, die MFA für alle Benutzer in allen Cloud-Apps vorschreibt. Wählen Sie diese Richtlinie aus, damit Sie sehen können, wie Microsoft die MFA für alle Benutzer in diesem Testmandanten erzwingt.   <br/>
+
+    **WICHTIG:** Ihr Lernpartner verwendet möglicherweise Testmandanten, die noch nicht auf dem Stand dieser jüngsten MFA-Änderung sind. Wenn Sie nicht nach jeder Benutzeranmeldung aufgefordert wurden, MFA durchzuführen, ist für Ihren Testmandanten keine MFA erforderlich. In diesem Fall wird die Richtlinie mit dem Titel **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter** nicht in Ihrer Richtlinienliste angezeigt. Fahren Sie daher mit Schritt 11 fort, um mit der Erstellung Ihrer eigenen Richtlinie für bedingten Zugriff zu beginnen. 
 
 6. Wählen Sie auf der Seite **Multi-Faktor-Authentifizierung für Microsoft Partner und Microsoft-Anbieter** unter der Gruppe **Benutzer** die Option **Alle Benutzer eingeschlossen und bestimmte Benutzer ausgeschlossen** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
 
@@ -223,17 +229,15 @@ Wie in Ihrer Schulung erwähnt wurde, gibt es drei Möglichkeiten, die MFA zu im
 
 24. Überprüfen Sie im angezeigten Bereich **Gewähren**, ob die Option **Zugriff gewähren** ausgewählt ist. Wählen Sie sie bei Bedarf aus. Aktivieren Sie dann das Kontrollkästchen **Multi-Faktor-Authentifizierung erforderlich**. Beachten Sie alle anderen verfügbaren Zugriffssteuerungen, die mit dieser Richtlinie aktiviert werden können. Für diese Richtlinie benötigen Sie nur die MFA. Wählen Sie die Schaltfläche **Auswählen** unten im Bereich **Gewähren** aus, die den Bereich schließt. 
 
-25. Wählen Sie unten im Fenster **Neu** im Feld **Richtlinie aktivieren** die Option **Ein** aus.
-
-26. Beachten Sie die Option, die unten auf der Seite angezeigt wird und Sie warnt, sich nicht selbst auszusperren. Wählen Sie die Option **Ich habe verstanden, dass mein Konto von dieser Richtlinie betroffen ist. Ich möchte dennoch fortfahren.** aus. Tatsächlich wird Holly nicht betroffen sein, da sie Mitglied der M365-Pilotprojektgruppe ist, die von dieser Richtlinie ausgeschlossen ist.
+25. **WICHTIG:** An diesem Punkt würden Sie normalerweise das Feld **Richtlinie aktivieren** auf **Ein** festlegen. Da einige Lernende jedoch ältere Testmandanten verwenden, die keine MFA erfordern, während andere die neuen Mandanten verwenden, die MFA erfordern, aktivieren Sie die soeben erstellte Richtlinie NICHT. Legen Sie deshalb das Feld **Richtlinie aktivieren** auf **Aus** fest.
 
 27. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
 
-28. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status ** auf **Ein** festgelegt ist.
+28. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status** auf **Aus** festgelegt ist.
 
 29. Bleiben Sie bei LON-CL1 angemeldet, und lassen alle Ihre Microsoft Edge-Browserregisterkarten für die nächste Aufgabe geöffnet.
 
-**Hinweis:** Wie bereits erwähnt, gibt es keine Möglichkeit, Ihre Richtlinie für bedingten Zugriff im aktuellen Microsoft 365-Testmandanten zu testen. Die Richtlinie für bedingten Zugriff von Microsoft erzwingt MFA für alle Benutzer. Wenn Sie über mehrere Richtlinien verfügen, die MFA erfordern, gilt die restriktivste Richtlinie. In diesem Fall ist die Microsoft-Richtlinie restriktiver als die Richtlinie, die Sie soeben erstellt haben, die Ausnahmen für die Mitglieder der Pilotprojektgruppe enthielt. Obwohl Sie Ihre Richtlinie nicht mit diesem Testmandanten testen können, empfehlen wir Ihnen, diese Erfahrung beim Erstellen einer Richtlinie für bedingten Zugriff zu nutzen, um die MFA in Ihren realen Microsoft 365-Bereitstellungen zu erzwingen.
+**Hinweis:** Wie bereits erwähnt, gibt es keine Möglichkeit, Ihre Richtlinie für bedingten Zugriff zu testen, wenn Sie einen Microsoft 365-Testmandanten verwenden, der MFA erfordert. Die Richtlinie für bedingten Zugriff von Microsoft erzwingt MFA für alle Benutzer. Wenn Sie über mehrere Richtlinien verfügen, die MFA erfordern, gilt die restriktivste Richtlinie. In diesem Fall ist die Microsoft-Richtlinie restriktiver als die Richtlinie, die Sie soeben erstellt haben, die Ausnahmen für die Mitglieder der Pilotprojektgruppe enthielt. Deshalb gibt es keine Möglichkeit, Ihre Richtlinie zu testen. Wenn Ihr Mandant älter ist und keine MFA erfordert, testen Sie sie ebenfalls nicht, da andere Lernende in Ihrem Kurs möglicherweise Mandanten verwenden, für die sie bereits MFA verwenden müssen. Anstatt einige die Richtlinie testen zu lassen und andere nicht, haben wir beschlossen, die Richtlinie nicht zu testen. Obwohl Sie Ihre Richtlinie nicht mit diesem Testmandanten testen können, empfehlen wir Ihnen, diese Erfahrung beim Erstellen einer Richtlinie für bedingten Zugriff zu nutzen, um die MFA in Ihren realen Microsoft 365-Bereitstellungen zu erzwingen.
 
 
 ### Aufgabe 4: Bereitstellen von Microsoft Entra Smart Lockout

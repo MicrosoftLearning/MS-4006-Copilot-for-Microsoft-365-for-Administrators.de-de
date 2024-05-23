@@ -19,29 +19,8 @@ In Ihrer Laborumgebung hat Ihr Lab-Hostinganbieter bereits einen Microsoft 365-T
 
 Sie melden sich mit dem lokalen Adatum\Administratorkonto beim Client 1-PC (LON-CL1) an. Wenn Sie zum ersten Mal auf Microsoft 365 zugreifen, melden Sie sich zunächst mit dem Microsoft 365-Mandantenadministratorkonto (MOD-Administrator) an. Anschließend bereiten Sie den Microsoft 365-Mandanten von Adatum für die Microsoft Entra-ID und für spätere Labore mithilfe von Überwachungswarnungen und Microsoft Graph PowerShell vor.
 
-**Wichtige MFA-Ankündigung:** Microsoft Security hat kürzlich einen neuen Sicherheitshack in den Testmandanten eingesetzt, die in den Schulungskursen verwendet werden. Dieses Feature erfordert, dass alle von Microsoft World-Wide Learning verwendeten Testmandanten bei jeder Anmeldung eines Benutzers bei Microsoft 365 die Multi-Faktor-Authentifizierung (MFA) verwenden. Microsoft World-Wide Learning kann diese Sicherheitsanforderung in Schulungslabs NICHT deaktivieren. Darüber hinaus können wir den bedingten Zugriff nicht verwenden, um MFA für ausgewählte Benutzergruppen zu aktivieren oder zu deaktivieren. MFA wird für jeden aktiviert und kann nie deaktiviert werden. Jedes Mal, wenn Sie sich bei Microsoft 365 in diesem Testmandanten als einer der fiktiven Benutzer anmelden, müssen Sie sich mit dem Konto und Kennwort des Benutzers UND mit einer zweiten Authentifizierungsform anmelden. Ihr Kursleiter führt Sie durch den MFA-Prozess, der derzeit im Mandanten eingesetzt wird.
 
-
-### Aufgabe 1 – Abrufen Ihrer Microsoft 365-Anmeldeinformationen
-
-Nachdem Sie das Lab gestartet haben, können Sie auf den kostenlosen Microsoft 365-Testmandanten zugreifen, der von Ihrem Laborhostinganbieter in der Microsoft Virtual Lab-Umgebung bereitgestellt wird. Innerhalb dieses Mandanten hat Ihr Lab-Hostinganbieter ein Microsoft 365-Benutzerkonto für einen Standardmandantenadministrator namens MOD-Administrator erstellt. Ihr Lab-Hostinganbieter hat diesem Benutzerkonto einen eindeutigen Benutzernamen und ein Kennwort zugewiesen, und dem Konto wurde die Rolle des globalen Microsoft 365-Administrators zugewiesen. Sie müssen diesen Benutzernamen und dieses Kennwort abrufen, damit Sie sich in der Microsoft Virtual Lab-Umgebung bei Microsoft 365 anmelden können. Ihnen wird auch ein Mandantenname und ein Mandantenpräfix zugewiesen. Sie werden diese Informationen auch in verschiedenen Aufgaben in den Laboren für diesen Kurs verwenden.
-
-Da dieser Kurs von Lernpartnern mit einem von mehreren autorisierten Lab-Hostinganbietern angeboten werden kann, können die tatsächlichen Schritte zum Abrufen des UPN-Namens und der Mandanten-ID, die Ihrem Mandanten zugeordnet ist, je nach Lab-Hostinganbieter variieren. Ihr Kursleiter wird Ihnen daher die notwendigen Anweisungen geben, wie Sie diese Informationen für Ihren Kurs erhalten. <br/>
-
-Beachten Sie die folgenden Informationen, die von Ihrem Labhostinganbieter zur späteren Verwendung bereitgestellt werden:
-
-- **Administratorbenutzername:** Wenn ein Unternehmen ein Microsoft 365-Abonnement erwirbt, erstellt Microsoft ein Standardadministratorkonto im Mandanten des Unternehmens und weist ihm der Rolle „Globaler Administrator“ zu. Die Person, die sich für das Microsoft 365-Abonnement registriert, ist in der Regel die Person, die diesem standardmäßigen globalen Administratorkonto zugewiesen wird. In diesem Testmandanten hat Ihr Labhostinganbieter den Namen des MOD-Administrators, den **Administratorbenutzernamen** und das **Administratorkennwort** diesem Konto zugewiesen. Der diesem Konto zugewiesene Administratorbenutzername lautet **admin@{mandantname}**. 
-
-- **Administratorkennwort:** Dies ist das Kennwort, das Ihr Labhostinganbieter dem Konto **MOD-Administrator** zugewiesen hat. Später in diesem Lab erstellen Sie ein weiteres globales Administratorkonto für **Holly Dickson**. Aus Gründen der Zweckmäßigkeit im Lab weisen Sie dem Konto von Holly das gleiche **Administratorkennwort** zu. Nur Holly und der MOD-Administrator verwenden dieses **Administratorkennwort**.
-
-- **Mandantenname:** Dies ist die Mandantendomäne des Testmandanten, der Ihrer VM-Lab-Umgebung zugewiesen wurde. Sie verwenden diesen Mandantennamen, wenn Sie sich bei Microsoft 365 und PowerShell anmelden, als verschiedene Benutzerkonten in den Labs in diesem Kurs. Der Mandantenname weist das Format **xxxxxZZZZZZ.onmicrosoft.com** auf, wobei xxxxxZZZZZZ das Mandantenpräfix und onmicrosoft.com der Domänenname ist. Der Domänenname ist die Domäne, die Ihren Microsoft 365-Diensten zugeordnet ist. Wenn einer der Labschritte erfordert, sich bei Microsoft 365 oder PowerShell als eines der Benutzerkonten anzumelden, müssen Sie den Alias des Benutzers gefolgt von diesem Mandantennamen eingeben. Wenn Ihr Mandantenpräfix beispielsweise WWLx123456 war, geben Sie bei der Anmeldung als Holly Dickson Holly@WWLx123456.onmicrosoft.com ein.
-
-- **Mandantenpräfix.** Die Domäne für jedes Microsoft 365-Benutzerkonto hat das Format {User alias}@xxxxxZZZZZZ.onmicrosoft.com, wobei xxxxxZZZZZZ das Mandantenpräfix ist. Es besteht aus zwei Teilen: dem Präfix Ihres Labhosts (xxxxx; einige Hosts verwenden ein generisches Präfix wie M365x, während andere ihre Firmeninitiale oder eine andere Bezeichnung) und der Mandanten-ID (ZZZZZZ; normalerweise eine 6-stellige Zahl). 
-
- - **Benutzerkennwort:** Ihr Testmandant enthält eine Reihe vordefinierter Benutzerkonten. Eines dieser Konten ist der MOD-Administrator, der das globale Administratorkonto ist, das für Ihren Testmandanten erstellt wurde. Ihr Labhostinganbieter hat diesem Konto das **Administratorkennwort** zugewiesen. Das **Benutzerkennwort** ist dagegen das Kennwort, das Ihr Labhostinganbieter allen anderen vordefinierten Benutzerkonten zugewiesen hat, die er erstellt hat. Alle anderen vordefinierten Benutzerkonten, die sich in der Liste **Aktive Benutzer** befinden – von denen Sie einige in den Labs in diesem Kurs verwenden werden – wurden alle diesem **Benutzerkennwort** zugewiesen. Sie müssen dieses Kennwort verwenden, wenn Sie sich als einer dieser Benutzer anmelden, z. B. Alex Wilber, Joni Sherman, Lynne Robbins usw.
-
-
-### Aufgabe 2: Einrichten des Organisationsprofils von Adatum
+### Aufgabe 1: Einrichten des Organisationsprofils von Adatum
 
 In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von Holly Dickson, der Microsoft 365-Administratorin von Adatum, übernehmen. In Ihrer Rolle als Holly wurden Sie beauftragt, das Profil des Unternehmens für den Microsoft 365-Testmandanten einzurichten. In dieser Aufgabe konfigurieren Sie die erforderlichen Optionen für den Mandanten von Adatum. Da Holly noch kein persönliches Microsoft 365-Benutzerkonto für sich selbst erstellt hat (Sie werden dies in der nächsten Übungsübung tun), wird Holly sich zunächst mit dem standardmäßigen Microsoft 365-Mandantenadministratorkonto und dem Kennwort bei Microsoft 365 anmelden, das von Ihrem Lab-Hostinganbieter erstellt wurde. Dieses Konto ist das **MOD-Administratorkonto**, dessen Alias "Administrator" ist. Der Benutzername für dieses Konto lautet **admin@xxxxxZZZZZZ.onmicrosoft.com** (wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen wird). Der Anzeigename für dieses Konto ist MOD-Administrator.
 
@@ -55,9 +34,9 @@ In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von 
 
 5. Geben Sie im daraufhin angezeigten Dialogfeld **Anmelden** den von Ihrem Labhostinganbieter bereitgestellten **Administratorbenutzernamen** ein (dies ist das MOD-Administratorkonto). Der Benutzername sollte das Format **admin@xxxxxZZZZZZ.onmicrosoft.com** haben, wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen ist. Wählen Sie **Weiter** aus. <br/>
 
-    **Hinweis:** Ihr Laborhosting bietet möglicherweise die Möglichkeit, neben Ressourcendaten wie Benutzernamen, Kennwörtern, PowerShell-Befehlen und anderen Daten, die während dieser Labs eingegeben werden müssen, eine Schaltfläche **Text eingeben** (oder eine entsprechende Schaltfläche) auszuwählen. Andere Lab-Hostinganbieter können eine alternative Methode bereitstellen, z. B. die Möglichkeit, diese Informationen zu kopieren und einzufügen. Nutzen Sie diese Funktionalität, damit Sie diese Informationen nicht manuell eingeben müssen. 
+    **Hinweis:** In den Labanweisungen, die in Ihrer VM-Labumgebung angezeigt werden, bietet Ihr Labhostinganbieter ggf. die Möglichkeit, neben Ressourcendaten wie Benutzernamen, Kennwörtern, PowerShell-Befehlen und anderen Daten, die während dieser Labs eingegeben werden müssen, eine Schaltfläche **Text eingeben** (oder eine entsprechende Schaltfläche) auszuwählen. Andere Lab-Hostinganbieter können eine alternative Methode bereitstellen, z. B. die Möglichkeit, diese Informationen zu kopieren und einzufügen. Nutzen Sie diese Funktionalität, damit Sie diese Informationen nicht manuell eingeben müssen. 
 
-6. Geben Sie im Dialogfeld **Kennwort eingeben** das eindeutige **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
+6. Geben Sie im Dialogfeld **Kennwort eingeben** das **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
 
 7. Aktivieren Sie im Dialogfeld **Angemeldet bleiben?** das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. Wählen Sie im daraufhin angezeigten Dialogfeld **Kennwort speichern** die Option **Nie** aus.
 
@@ -101,7 +80,7 @@ In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von 
 
 17. Bleiben Sie für die nächste Aufgabe bei **LON-CL1** angemeldet, mit Microsoft Edge im **Microsoft 365 Admin Center** geöffnet.
 
-### Aufgabe 3- Erstellen eines benutzerdefinierten Designs für das Pilotprojektteam von Adatum
+### Aufgabe 2: Erstellen eines benutzerdefinierten Designs für das Pilotprojektteam von Adatum
 
 In der vorherigen Aufgabe haben Sie gelernt, dass das System, wenn jemand bei Microsoft 365 angemeldet ist, entweder sein Foto (sofern vorhanden) oder ihre Initialen anzeigt, wenn kein Foto bereitgestellt wird. Holly Dickson, die Microsoft 365-Administratorin von Adatum, ist nicht zufrieden mit dem Anzeigen eines Bilds oder einer Initiale des angemeldeten Benutzers. Sie möchte ein benutzerdefiniertes Design für die Mitglieder ihres Pilotprojektteams erstellen, damit auch der Name des angemeldeten Benutzers angezeigt wird. Wenn die Teammitglieder dieses Design bevorzugen, wird am Ende des Pilotprojekts dieselbe Option im Standarddesign konfiguriert, sodass sie für alle Benutzer gilt. 
 
@@ -185,7 +164,7 @@ Benutzerdefinierte Designs müssen einer oder mehreren Microsoft 365-Gruppen zug
 
 28. Bleiben Sie für die nächste Aufgabe bei **LON-CL1** angemeldet, mit Microsoft Edge im **Microsoft 365 Admin Center** geöffnet.
 
-### Aufgabe 4 – Installieren von Microsoft Graph PowerShell 
+### Aufgabe 3: Installieren von Microsoft Graph PowerShell 
 
 Microsoft Graph PowerShell ist erforderlich, um beim Installieren von Microsoft 365 mehrere Konfigurationsaufgaben auszuführen. Da zukünftige Übungsübungen mehrere dieser Aufgaben mit Windows PowerShell ausführen, sollten Sie zunächst das Microsoft Graph PowerShell-Modul installieren. Mit diesem Modul können Sie viele der Microsoft 365-Benutzer- und Organisationsverwaltungsaufgaben über PowerShell ausführen. Es eignet sich hervorragend für Massenaufgaben wie Kennwortzurücksetzungen, Kennwortrichtlinien, Lizenzverwaltung und Berichterstellung usw.  
 
