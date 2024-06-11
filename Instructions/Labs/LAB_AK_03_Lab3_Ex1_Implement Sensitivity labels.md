@@ -2,7 +2,7 @@
 
 In Ihrer Rolle als Holly Dickson, der neuen Microsoft 365-Administratorin von Adatum, haben Sie Microsoft 365 in einer virtualisierten Laborumgebung bereitgestellt. Während Sie mit Ihrem Microsoft 365-Pilotprojekt fortfahren, sind Ihre nächsten Schritte die Implementierung von Vertraulichkeitsbezeichnungen mit Microsoft Entra ID Protection bei Adatum. In diesem Lab erstellen und veröffentlichen Sie eine Bezeichnung, und Sie testen eine veröffentlichte Bezeichnung. Dabei testen Sie jedoch nicht die Bezeichnung, die Sie in diesem Lab erstellen. Stattdessen testen Sie eine andere Bezeichnung.
 
-**Wichtig:** Wenn Sie eine neue Vertraulichkeitsbezeichnung und Bezeichnungsrichtlinie veröffentlichen, kann es bis zu 24 Stunden dauern, bis sie über Microsoft 365 verteilt werden. Daher können Sie die Bezeichnung, die Sie in diesem Lab erstellen, nicht testen. Stattdessen testen Sie eine bereits vorhandene Vertraulichkeitsbezeichnung mit dem Namen **Projekt - Falcon**. Diese bereits vorhandene Bezeichnung ist fast identisch mit der Bezeichnung, das Sie erstellen werden. Sie können also dieselben Ergebnisse sehen, als wenn Sie die von Ihnen erstellte Bezeichnung hätten testen können. 
+**Wichtig:** Wenn Sie eine neue Vertraulichkeitsbezeichnung und Bezeichnungsrichtlinie veröffentlichen, kann es bis zu 24 Stunden dauern, bis sie über Microsoft 365 verteilt werden. Daher können Sie die Bezeichnung, die Sie in diesem Lab erstellen, nicht testen. Stattdessen testen Sie eine bereits vorhandene Vertraulichkeitsbezeichnung mit dem Namen **Projekt - Falcon**. Diese bereits vorhandene Bezeichnung ist fast identisch mit der Bezeichnung, das Sie erstellen werden. Sie können im Grunde genommen dieselben Ergebnisse sehen, als wenn Sie die von Ihnen erstellte Bezeichnung hätten testen können. 
 
 
 ### Aufgabe 1 – Installieren des Microsoft Entra ID Protection Unified Labeling-Clients
@@ -277,9 +277,9 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 19. Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus.
 
-20. Geben Sie im **Anmeldefenster****JoniS@xxxxxZZZZZZ.onmicrosoft** ein (wobei "xxxxxZZZZZZ" das Mandantenpräfix ihres Labhostinganbieters ist), und wählen Sie dann **Weiter**.
+20. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus.
 
-21. Geben Sie im Fenster **Kennwort eingeben** dasselbe **Verwaltungskennwort** ein, das von Ihrem Labhostinganbieter für das Mandantenadministratorkonto (d. h. das MOD-Administratorkonto) bereitgestellt wird, und wählen Sie dann **Anmelden**.
+21. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie dann **Anmelden**. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
 
 22. Wenn ein **Willkommensfenster** angezeigt wird, wählen Sie das X aus, um es zu schließen.
 
@@ -335,5 +335,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
     **Hinweis:**  In dieser Aufgabe haben Sie gerade überprüft, dass Microsoft Entra ID Protection das Dokument basierend auf den von Ihnen konfigurierten PII-Richtlinienparametern geschützt hat. Als Joni nur die Berechtigung "Schreibgeschützt" zugewiesen wurde, wurde das Dokument in der Leseansicht geöffnet und sie konnte es nicht ändern. Als Joni die Berechtigung "Bearbeiten" zugewiesen wurde, wurde das Dokument in Word geöffnet und sie konnte es ändern. Da Holly das Dokument nicht für Sie freigegeben hat, konnten Sie es nicht öffnen, als sie das Dokument in einer E-Mail an Ihr persönliches Postfach gesendet hat. 
 
+## Ende von Lab 3
 
-## Herzlichen Glückwunsch! Sie haben gerade das letzte Lab in diesem Kurs abgeschlossen.
+
+# Herzlichen Glückwunsch! Sie haben gerade das letzte Lab in diesem Kurs abgeschlossen.
