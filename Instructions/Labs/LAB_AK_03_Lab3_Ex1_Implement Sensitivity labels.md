@@ -183,45 +183,52 @@ Stattdessen testen Sie eine der bereits vorhandenen Vertraulichkeitsbezeichnunge
 
 1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein.
 
-2. Um die **Projekt-Falcon** Vertraulichkeitsbezeichnung zu überprüfen, müssen Sie sie zuerst einem Dokument zuweisen. Wählen Sie die Registerkarte **Home | Microsoft 365** in Ihrem Browser, um zur Microsoft 365-Startseite zurückzukehren. Wählen Sie auf der linken Seite des Bildschirms das Symbol **Apps** aus. Klicken Sie auf der daraufhin angezeigten Seite **Apps** mit der rechten Maustaste auf die Kachel **Word**, und wählen Sie **In neuer Registerkarte öffnen** aus. 
+2. Sie überprüfen zuerst die **Project – Falcon-** Vertraulichkeitsbezeichnung, die Sie in dieser Aufgabe auf ein Dokument anwenden werden.  In Ihrem Edge-Browser sollte weiterhin eine Registerkarte für das **Microsoft Purview**-Portal aus der vorherigen Aufgabe geöffnet sein. Wählen Sie im **Microsoft Purview**-Portal unter der Gruppe **Informationsschutz** im linken Navigationsbereich **Bezeichnungen** aus. 
 
-3. In der Registerkarte **Word | Microsoft 365**, wählen Sie unter dem Abschnitt **Neu erstellen **oben auf der Seite **Leeres Dokument** aus.
+3. Wählen Sie auf der Seite **Bezeichnungen** in der Liste der Bezeichnungen den rechten Pfeil (**>**) neben **Streng vertraulich** aus, um die untergeordneten Bezeichnungen unter dieser Bezeichnung anzuzeigen. Dadurch wird die bereits vorhandene **Project – Falcon**-Bezeichnung angezeigt.
 
-4. Wenn ein Fenster **Ihre Datenschutzoptionen** angezeigt wird, wählen Sie **Schließen**.
+4. Wählen Sie die **Projekt – Falcon**-Bezeichnung (nicht das Kontrollkästchen; sondern den Bezeichnungsnamen) aus. Dadurch wird ein Detailbereich für die **Projekt – Falcon**-Bezeichnung geöffnet. Überprüfen Sie die für diese Bezeichnung definierten Informationen, und schließen Sie dann den Bereich.  
 
-5. Wenn im Word-Menüband Symbole für jedes Feature angezeigt werden, die Symbole jedoch nicht nach Gruppe getrennt werden, wählen Sie den Abwärtspfeil ganz rechts im Menüband aus, und wählen Sie dann in **Menübandlayout** **Klassisches Menüband** aus. Dadurch wird das Menüband auf die herkömmliche Menübandformatvorlage umgestellt, die nach Featuregruppe (z. B. Rückgängig, Zwischenablage, Schriftart, Absatz, Formatvorlagen usw.) aufgeteilt wird.
+5. Sie werden nun einem Dokument die **Project – Falcon**-Vertraulichkeitsbezeichnung zuweisen. Wählen Sie die Registerkarte **Home | Microsoft 365** in Ihrem Browser, um zur Microsoft 365-Startseite zurückzukehren. Wählen Sie auf der linken Seite des Bildschirms das Symbol **Apps** aus. Klicken Sie auf der daraufhin angezeigten Seite **Apps** mit der rechten Maustaste auf die Kachel **Word**, und wählen Sie **In neuer Registerkarte öffnen** aus. 
 
-6. Geben Sie im **Word-Dokument** den folgenden Text ein: **Testen einer Vertraulichkeitsbezeichnung auf einem Dokument mit personenbezogenen Informationen (PII); in diesem Fall eine US-Sozialversicherungsnummer: 111-11-1111.**
+6. In der Registerkarte **Word | Microsoft 365**, wählen Sie unter dem Abschnitt **Neu erstellen **oben auf der Seite **Leeres Dokument** aus.
 
-7. Da Sie Vertraulichkeitsbezeichnungen zu Beginn dieser Übung aktiviert haben, sollte **Word** oben auf der Seite eine **Vertraulichkeitsgruppe** im Menüband anzeigen. Wählen Sie den Abwärtspfeil in der Gruppe **Vertraulichkeit** aus. Im daraufhin angezeigten Dropdownmenü sollte die Liste der Vertraulichkeitsbezeichnungstypen angezeigt werden. Wählen Sie **Streng vertraulich** aus, und wählen Sie dann im daraufhin angezeigten Untermenü **Projekt - Falcon** aus. <br/>
+7. Wenn ein Fenster **Ihre Datenschutzoptionen** angezeigt wird, wählen Sie **Schließen**.
 
-    **Hinweis:** Nach 24 Stunden wird die Bezeichnung, die Sie im vorherigen Vorgang erstellt haben, im Untermenü "Streng vertraulich" neben der Projekt-Falcon-Bezeichnung angezeigt. Ersteinmal verwenden Sie aber die Bezeichnung **Projekt - Falcon** an ihrer Stelle.
+8. Wenn im Word-Menüband Symbole für jedes Feature angezeigt werden, die Symbole jedoch nicht nach Gruppe getrennt werden, wählen Sie den Abwärtspfeil ganz rechts im Menüband aus, und wählen Sie dann in **Menübandlayout** **Klassisches Menüband** aus. Dadurch wird das Menüband auf die herkömmliche Menübandformatvorlage umgestellt, die nach Featuregruppe (z. B. Rückgängig, Zwischenablage, Schriftart, Absatz, Formatvorlagen usw.) aufgeteilt wird.
 
-8. Beachten Sie im Dokument, wie die Bezeichnung ein **VERTRAULICH - Projekt Falcon**-Wasserzeichen am oberen Rand des Dokuments angebracht hat. Die Projekt - Falcon-Bezeichnung wurde genau wie die von Ihnen erstellte Bezeichnung konfiguriert, bei der das Wasserzeichen diagonal in der Mitte der Seite angezeigt werden soll. Warum wird sie also oben auf der Seite angezeigt? Die Antwort lautet, dass Sie **Word für das Web **verwenden, das standardmäßig wie hier angezeigt wird. Um zu sehen, wie es für jemanden angezeigt wird, der das Dokument liest, müssen Sie das Dokument in der **Leseansicht** anzeigen, was Sie jetzt tun werden. <br/>
+9. Geben Sie im **Word-Dokument** den folgenden Text ein: **Testen einer Vertraulichkeitsbezeichnung auf einem Dokument mit personenbezogenen Informationen (PII); in diesem Fall eine US-Sozialversicherungsnummer: 111-11-1111.**
+
+10. Da Sie Vertraulichkeitsbezeichnungen zu Beginn dieser Übung aktiviert haben, sollte **Word** oben auf der Seite eine **Vertraulichkeitsgruppe** im Menüband anzeigen. Wählen Sie den Abwärtspfeil in der Gruppe **Vertraulichkeit** aus. Im daraufhin angezeigten Dropdownmenü sollte die Liste der Vertraulichkeitsbezeichnungstypen angezeigt werden. Wählen Sie **Streng vertraulich** aus, und wählen Sie dann im daraufhin angezeigten Untermenü **Projekt - Falcon** aus. <br/>
+
+    **Hinweis:** Nach 24 Stunden wird die Bezeichnung, die Sie im vorherigen Vorgang erstellt haben, im Untermenü „Streng vertraulich“ neben der „Projekt – Falcon“-Bezeichnung angezeigt. Ersteinmal verwenden Sie aber die Bezeichnung **Projekt - Falcon** an ihrer Stelle.
+
+11. Beachten Sie im Dokument, wie die Bezeichnung ein **VERTRAULICH - Projekt Falcon**-Wasserzeichen am oberen Rand des Dokuments angebracht hat. Die Projekt - Falcon-Bezeichnung wurde genau wie die von Ihnen erstellte Bezeichnung konfiguriert, bei der das Wasserzeichen diagonal in der Mitte der Seite angezeigt werden soll. Warum wird sie also oben auf der Seite angezeigt? Die Antwort lautet, dass Sie **Word für das Web **verwenden, das standardmäßig wie hier angezeigt wird. Um zu sehen, wie es für jemanden angezeigt wird, der das Dokument liest, müssen Sie das Dokument in der **Leseansicht** anzeigen, was Sie jetzt tun werden. <br/>
 
     Wählen Sie die Registerkarte **Ansicht** und dann im Word-Menüband die Option **Leseansicht** aus. Beachten Sie, wie das Wasserzeichen diagonal verlaufend in der Mitte des Dokuments angezeigt wird. So wird das Wasserzeichen für jemanden angezeigt, der das Dokument liest. Beachten Sie, dass bei Verwendung der Word-Desktop-App das Wasserzeichen angezeigt wird, das durch die Bezeichnung festgelegt wurde, was in diesem Fall genauso wie hier in der Leseansicht angezeigt wird. <br/>
 
     Um die Leseansicht zu beenden, wählen Sie **Dokument bearbeiten** in der Menüleiste oben auf der Seite aus. Wählen Sie im angezeigten Dropdownmenü **Bearbeiten** aus.
 
-9. Bei diesem ersten Validierungstest entfernen Sie diese Vertraulichkeitsbezeichnung, die auf dieses Dokument angewendet wird. Eine der Bezeichnungsrichtlinienoptionen erfordert, dass Benutzer eine Begründung zum Entfernen einer Bezeichnung oder zum Auswählen einer niedrigeren Klassifizierungsbezeichnung angeben. Sie überprüfen nun, ob diese Einstellung ordnungsgemäß funktioniert. <br/>
+12. Bei diesem ersten Validierungstest entfernen Sie diese Vertraulichkeitsbezeichnung, die auf dieses Dokument angewendet wird. Eine der Bezeichnungsrichtlinienoptionen erfordert, dass Benutzer eine Begründung zum Entfernen einer Bezeichnung oder zum Auswählen einer niedrigeren Klassifizierungsbezeichnung angeben. Sie überprüfen nun, ob diese Einstellung ordnungsgemäß funktioniert. <br/>
 
     Wählen Sie in der Gruppe **Vertraulichkeit** im Word-Menüband den Abwärtspfeil aus. Beachten Sie im daraufhin angezeigten Dropdownmenü, dass neben **Streng vertraulich** ein Häkchen angezeigt wird. Halten Sie die Maus über **Streng vertraulich**, um das Untermenü anzuzeigen. Beachten Sie, wie neben **Projekt - Falcon **ein Häkchen angezeigt wird. Die Häkchen identifizieren die aktuelle Bezeichnung, die auf das Dokument angewendet wird.  <br/>
  
     Um die Bezeichnung aus diesem Dokument zu entfernen, wählen Sie die **Projekt - Falcon**-Bezeichnung aus, die in diesem Dropdownmenü angezeigt wird.
     
-10. Wählen Sie im daraufhin angezeigten Fenster **Begründung erforderlich** die Option **Sonstige (Erläutern)** aus. Geben Sie im Feld **Erklärung, warum Sie diese Bezeichnung ändern** **Testen, was passiert, wenn eine Bezeichnung von einem Dokument entfernt wird** ein und wählen Sie dann **Ändern**.
+13. Wählen Sie im daraufhin angezeigten Fenster **Begründung erforderlich** die Option **Sonstige (Erläutern)** aus. Geben Sie im Feld **Erklärung, warum Sie diese Bezeichnung ändern** **Testen, was passiert, wenn eine Bezeichnung von einem Dokument entfernt wird** ein und wählen Sie dann **Ändern**.
 
-11. Beachten Sie, wie das Wasserzeichen im Dokument verschwunden ist. Wählen Sie in der Gruppe **Vertraulichkeit** im Word-Menüband den Abwärtspfeil aus. Beachten Sie im daraufhin angezeigten Dropdownmenü, dass während **Streng vertraulich** > **Projekt - Falcon** angezeigt wird, keine Häkchen daneben angezeigt werden. Dies gibt an, dass die Vertraulichkeitsbezeichnung nicht mehr auf dieses Dokument angewendet wird.  
+14. Beachten Sie, wie das Wasserzeichen im Dokument verschwunden ist. Wählen Sie in der Gruppe **Vertraulichkeit** im Word-Menüband den Abwärtspfeil aus. Beachten Sie im daraufhin angezeigten Dropdownmenü, dass während **Streng vertraulich** > **Projekt - Falcon** angezeigt wird, keine Häkchen daneben angezeigt werden. Dies gibt an, dass die Vertraulichkeitsbezeichnung nicht mehr auf dieses Dokument angewendet wird.  
 
-12. Wenn Sie die Vertraulichkeitsbezeichnung erneut auf das Dokument anwenden möchten, wählen Sie im Dropdownmenü **Streng vertraulich** > **Projekt – Falcon** aus. Beachten Sie, wie das Wasserzeichen wieder im Dokument angezeigt wird.
+15. Wenn Sie die Vertraulichkeitsbezeichnung erneut auf das Dokument anwenden möchten, wählen Sie im Dropdownmenü **Streng vertraulich** > **Projekt – Falcon** aus. Beachten Sie, wie das Wasserzeichen wieder im Dokument angezeigt wird.
 
-13. Sie speichern nun das Dokument, damit Sie es in der nächsten Aufgabe freigeben können. Ein Dokumentnamenfeld, das einen Dropdownpfeil enthält, wird in der oberen linken Ecke der Seite rechts neben dem Word-Symbol angezeigt (Word kann **Dokument** oder **Dokument1** als temporären Dateinamen anzeigen). Wählen Sie den Dropdownpfeil. Bestätigen Sie im angezeigten Dropdownmenü, dass der **Dateispeicherort ****Holly Dickson > Dokumente **lautet. <br/>
+16. Sie speichern nun das Dokument, damit Sie es in der nächsten Aufgabe freigeben können. Ein Dokumentnamenfeld, das einen Dropdownpfeil enthält, wird in der oberen linken Ecke der Seite rechts neben dem Word-Symbol angezeigt (Word kann **Dokument** oder **Dokument1** als temporären Dateinamen anzeigen). Wählen Sie den Dropdownpfeil. Bestätigen Sie im angezeigten Dropdownmenü, dass der **Dateispeicherort ****Holly Dickson > Dokumente **lautet. <br/>
 
     Benennen Sie die Datei im Feld **Dateiname** in **ProtectedDocument1** um, und klicken Sie dann außerhalb dieses Dateinamenmenüs (im Dokument klicken). Beachten Sie, dass der neue Name, der der Datei zugewiesen ist, in der Titelleiste angezeigt wird. 
 
-14. Lassen Sie die Registerkarte **ProtectedDocument1** geöffnet, in der das Dokument angezeigt wird. Sie kehren zu diesem Dokument in der nächsten Aufgabe zurück, um das Dokument mit Joni Sherman zu teilen.
+17. Lassen Sie die Registerkarte **ProtectedDocument1** geöffnet, in der das Dokument angezeigt wird. Sie kehren zu diesem Dokument in der nächsten Aufgabe zurück, um das Dokument mit Joni Sherman zu teilen.
 
-Sie haben gerade erfolgreich ein Word-Dokument erstellt, das die Richtlinie für streng vertrauliche Bezeichnungen mit dem Titel Projekt - Falcon enthält. 
+Sie haben gerade erfolgreich ein Word-Dokument erstellt, das die streng vertrauliche Bezeichnung mit dem Titel **Projekt –Falcon** enthält. 
+
 
 ### Aufgabe 4 – Schützen eines Dokuments mithilfe von Microsoft Entra ID Protection
 
