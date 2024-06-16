@@ -42,13 +42,13 @@ In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von 
 
 8. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-9. Wenn ein Fenster **Weitere Apps suchen** oder ein Fenster **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke der Fenster aus, um es zu schließen. 
+9. Wenn eines der Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke der Fenster aus, um es zu schließen. 
 
 10. Die Seite **Willkommen bei Microsoft 365** wird in Ihrem Edge-Browser auf der Registerkarte **Home | Microsoft 365** angezeigt. Dies ist die Microsoft 365-Startseite des MOD-Administrators. <br/>
 
     Beachten Sie das Symbol, das in der oberen rechten Ecke des Bildschirms angezeigt wird. Dieses Symbol stellt das **MOD-Administratorkonto** dar, bei dem es sich um das Mandantenadministratorkonto handelt, das von Ihrem Lab-Hostinganbieter erstellt wurde, als das Sie sich soeben angemeldet haben. Die anderen vorhandenen Microsoft 365-Benutzerkonten, die von Ihrem Lab-Hostinganbieter erstellt wurden, weisen ein Bild auf, das jedem ihrer Konten zugeordnet ist. Wenn Sie sich daher als Benutzer in späteren Labs anmelden, wird das Bild des Benutzers anstelle der Initialen des Benutzers angezeigt. Wenn einem Benutzer wie dem MOD-Administrator jedoch kein Bild zugewiesen ist, werden entweder die Initialen des Benutzers anstelle des Bilds angezeigt, oder wie in diesem Fall ein Symbol, das dem Konto zugewiesen wurde. <br/>
 
-    Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im linken Bereich angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center **auf einer neuen Browserregisterkarte geöffnet. 
+    Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im Navigationsbereich angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
 11. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Alle anzeigen** und dann **Einstellungen ** aus. Wählen Sie in der Gruppe **Einstellungen** die Option **Organisationseinstellungen** aus. 
 
@@ -76,7 +76,7 @@ In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von 
 
 15. Wählen Sie **Speichern**.
 
-16. Beachten Sie oben im Bereich **Organisationsinformationen** die Meldung, die angibt, dass die Änderungen gespeichert wurden. Wählen Sie das **X** in der oberen rechten Ecke aus, um den Bereich zu schließen.
+16. Beachten Sie oben im Bereich **Organisationsinformationen** die Meldung, die angibt, dass die Änderungen gespeichert wurden. Wählen Sie das **X** in der oberen Ecke des Bereichs aus, um diesen zu schließen.
 
 17. Bleiben Sie für die nächste Aufgabe bei **LON-CL1** angemeldet, mit Microsoft Edge im **Microsoft 365 Admin Center** geöffnet.
 

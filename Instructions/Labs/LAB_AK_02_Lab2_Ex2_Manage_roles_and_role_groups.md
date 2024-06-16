@@ -11,7 +11,7 @@ Holly Dickson wurde die Microsoft 365-Rolle „Globaler Administrator“ zugewie
 
     Wechseln Sie zu **LON-CL1**. 
 
-2. Auf **LON-CL1** im **Microsoft 365 Admin Center** in Ihrem Edge-Browser sollten Sie von einer früheren Labübung noch als Holly Dickson angemeldet sein. Wählen Sie im linken Bereich **Benutzer** und anschließend **Aktive Benutzer** aus. 
+2. Auf **LON-CL1** im **Microsoft 365 Admin Center** in Ihrem Edge-Browser sollten Sie von einer früheren Labübung noch als Holly Dickson angemeldet sein. Wählen Sie im Navigationsbereich **Benutzer** und anschließend **Aktive Benutzer** aus. 
 
 3. Wählen Sie in der Liste **Aktive Benutzer** den Namen **Diego Siciliani** aus.  <br/>
 
@@ -222,11 +222,11 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 14. Wenn in der Mitte der Seite das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, wählen Sie zweimal den Vorwärtspfeil (>) und dann das Häkchen aus, um es zu schließen.
 
-15. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke des Fensters aus, um es zu schließen.
+15. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
 
 16. Im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Joni, befindet sich auf der linken Seite des Bildschirms ein Navigationsbereich mit den Anwendungen, auf die der Benutzer zugreifen kann. Sie sehen, dass die Option **Administrator** im Bereich **Apps** nicht angezeigt wird. Das liegt daran, dass Joni nie eine Microsoft 365-Administratorrolle zugewiesen wurde. 
 
-17. Sie melden sich jetzt bei Microsoft 365 als Joni ab. Wählen Sie in **Microsoft Edge**oben rechts auf der Seite **Willkommen bei Microsoft 365** das Benutzersymbol für **Joni Sherman** (der Kreis in der oberen rechten Ecke mit dem Bild von Joni) und im angezeigten Fenster von **Joni Sherman** die Option **Abmelden** aus. 
+17. Sie melden sich jetzt bei Microsoft 365 als Joni ab. Wählen Sie in **Microsoft Edge** oben rechts auf der Seite **Willkommen bei Microsoft 365** das Benutzersymbol für **Joni Sherman** (der Kreis in der oberen Ecke mit dem Bild von Joni) und im daraufhin angezeigten Fenster von **Joni Sherman** die Option **Abmelden** aus. 
 
 18. Sie melden sich jetzt wieder als **Lynne Robbins** bei Microsoft 365 an. In Ihrer aktuellen **Edge**-Browserregisterkarte sollte die Meldung **Joni, Sie sind jetzt abgemeldet** angezeigt werden. In diesem Fenster haben Sie die Möglichkeit, sich wieder als Joni oder als anderer Benutzer anzumelden. <br/>
 
@@ -234,7 +234,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 19. Wenn das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, wählen Sie zweimal den Vorwärtspfeil (>) und dann das Häkchen aus, um das Fenster zu schließen.
 
-20. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke des Fensters aus, um es zu schließen.
+20. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
 
 21. Beachten Sie im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Lynne, dass das Symbol **Administrator** im Navigationsbereich auf der linken Seite des Bildschirms angezeigt wird. Dieses Symbol wird angezeigt, da Lynne eine Microsoft 365-Administratorrolle zugewiesen wurde. Wählen Sie das Symbol **Admin** aus, um das Microsoft 365 Admin Center zu öffnen.
 
@@ -282,7 +282,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 39. Überprüfen Sie im angezeigten Bereich **Anmeldung blockieren**, ob die E-Mail-Adresse von Alex unter der Überschrift **Anmeldung blockieren** angezeigt wird. Aktivieren Sie das Kontrollkästchen **Diesen Benutzer an der Anmeldung hindern**, und wählen Sie dann **Änderungen speichern** aus. 
 
-40. Im Fenster **Anmeldung blockieren** sollte eine Meldung angezeigt werden, dass Alex jetzt daran gehindert wird, sich anzumelden. Das heißt, dass niemand sich mit Alex‘ Benutzernamen anmelden kann, falls sein Benutzername tatsächlich kompromittiert wurde. Darüber hinaus wird Alex innerhalb von 60 Minuten automatisch von Microsoft-Diensten abgemeldet. Wählen Sie das **X** in der oberen rechten Ecke des Bereichs aus, um ihn zu schließen. 
+40. Im Fenster **Anmeldung blockieren** sollte eine Meldung angezeigt werden, dass Alex jetzt daran gehindert wird, sich anzumelden. Das heißt, dass niemand sich mit Alex‘ Benutzernamen anmelden kann, falls sein Benutzername tatsächlich kompromittiert wurde. Darüber hinaus wird Alex innerhalb von 60 Minuten automatisch von Microsoft-Diensten abgemeldet. Wählen Sie das **X** in der oberen Ecke des Bereichs aus, um diesen zu schließen. 
 
 41. Lynne wurde soeben informiert, dass **Nestor Wilkes** Benutzername ebenfalls potenziell kompromittiert wurde. Wiederholen Sie die Schritte 33 bis 36, um zu verhindern, dass Nestor oder andere seinen Benutzernamen zum Anmelden verwenden. <br/>
 
@@ -290,7 +290,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
     Schließen Sie den Bereich **Anmeldung blockieren**.
 
-42. Sie haben zuvor Alex Wilber daran gehindert, sich anzumelden. Um zu überprüfen, ob er blockiert ist, versuchen Sie, sich als Alex anzumelden. Melden Sie sich bei Microsoft 365 ab, indem Sie das Benutzersymbol für **Lynne Robbins** (den Kreis mit dem Bild von Lynne in der oberen rechten Ecke) und dann im angezeigten Fenster **Lynne Robbins** die Option **Abmelden** auswählen. 
+42. Sie haben zuvor Alex Wilber daran gehindert, sich anzumelden. Um zu überprüfen, ob er blockiert ist, versuchen Sie, sich als Alex anzumelden. Melden Sie sich bei Microsoft 365 ab, indem Sie das Benutzersymbol für **Lynne Robbins** (den Kreis mit dem Bild von Lynne in der oberen Ecke) und dann im daraufhin angezeigten Fenster **Lynne Robbins** die Option **Abmelden** auswählen. 
 
 43. Sie sollten alle Browserregisterkarten mit Ausnahme der Registerkarte **Abmelden** schließen, nachdem Sie abgemeldet wurden. Navigieren Sie auf der Registerkarte **Abmelden** zu **https://portal.office.com**. 
 

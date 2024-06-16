@@ -118,11 +118,11 @@ In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglie
 
 6. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-7. Wenn das Fenster **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke des Fensters aus, um es zu schließen. 
+7. Wenn das Fenster **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen. 
 
 8. Die Seite **Willkommen bei Microsoft 365** wird in Ihrem Edge-Browser auf der Registerkarte **Startseite | Microsoft 365** angezeigt. Das ist die Microsoft 365-Willkommensseite von Holly. Sie sehen, dass Hollys Initialen in der oberen rechten Ecke des Bildschirms angezeigt werden, ihr Name jedoch nicht. Das liegt daran, dass Hollys Konto zu dem Zeitpunkt, als Sie die Microsoft 365-Pilotprojektbenutzer zur Gruppe hinzugefügt haben, die dem benutzerdefinierten Design in der vorherigen Labübung zugeordnet war, nicht vorhanden war. Da Holly ihren Namen oben in jedem Microsoft 365-Fenster sehen möchte, wenn sie beim System angemeldet ist, möchte sie zuerst ihr Konto zur Gruppe der Microsoft 365-Pilotprojektbenutzer hinzufügen. <br>
 
-    Wählen Sie in der Spalte der Anwendungssymbole, die auf der linken Seite des Bildschirms angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
+    Wählen Sie in der Spalte der Anwendungssymbole, die im Navigationsbereich an der Seite des Bildschirms angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
 9. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Teams und Gruppen** und dann **Aktive Teams und Gruppen** aus. 
 
@@ -130,7 +130,7 @@ In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglie
 
 11. Im angezeigten Bereich **M365 pilot project** wird standardmäßig die Registerkarte **Allgemein** angezeigt. Wählen Sie die Registerkarte **Mitgliedschaft** aus.
 
-12. Auf der Registerkarte **Mitgliedschaft** wird die Unterregisterkarte **Besitzer** standardmäßig im Navigationsbereich angezeigt, der sich auf der linken Seite des Bereichs befindet. Wählen Sie die Unterregisterkarte **Mitglieder** aus, die darunter angezeigt wird.
+12. Auf der Registerkarte **Mitgliedschaft** wird die Unterregisterkarte **Besitzer** standardmäßig im Navigationsbereich angezeigt, der sich an der Seite des Bereichs befindet. Wählen Sie die Unterregisterkarte **Mitglieder** aus, die darunter angezeigt wird.
 
 13. Wählen Sie auf der Unterregisterkarte **Mitglieder** die Option **+ Mitglieder hinzufügen** aus.
 
@@ -256,17 +256,17 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 3. Auf LON-DC1 wird der **Server-Manager** beim Start automatisch gestartet. Wählen Sie im **Server-Manager** in der oberen rechten Menüleiste **Extras** aus, und wählen Sie dann im Dropdownmenü **Gruppenrichtlinienverwaltung** aus. Maximieren Sie das angezeigte Fenster **Gruppenrichtlinienverwaltung**.
 
-4. Sie sollten die Gruppenrichtlinie bearbeiten, die die Kontosperrrichtlinie Ihrer Organisation enthält. Erweitern Sie bei Bedarf in der Stammkonsolenstruktur im linken Bereich **Forest:Adatum.com**, dann **Domänen** und dann **Adatum.com**.  <br/>
+4. Sie sollten die Gruppenrichtlinie bearbeiten, die die Kontosperrrichtlinie Ihrer Organisation enthält. Erweitern Sie bei Bedarf in der Stammkonsolenstruktur im Seitenbereich **Forest:Adatum.com**, dann **Domänen** und dann **Adatum.com**.  <br/>
 
     ‎Klicken Sie unter **Adatum.com** mit der rechten Maustaste auf **Standarddomänenrichtlinie**, und wählen Sie dann im Menü **Bearbeiten** aus.
 
 5. Maximieren Sie das angezeigte Fenster **Gruppenrichtlinienverwaltungs-Editor**.
 
-6. Erweitern Sie in der Struktur **Standarddomänenrichtlinie** im linken Bereich unter **Computerkonfiguration** die Option **Richtlinien**, und erweitern Sie **Windows-Einstellungen**, dann **Sicherheitseinstellungen** und dann **Kontorichtlinien**.
+6. Erweitern Sie in der Struktur **Standarddomänenrichtlinie** im Seitenbereich unter **Computerkonfiguration** die Option **Richtlinien**, und erweitern Sie dann **Windows-Einstellungen**, **Sicherheitseinstellungen** und dann **Kontorichtlinien**.
 
 7. Wählen Sie im Ordner **Kontorichtlinien** die Option **Kontosperrrichtlinie** aus.
 
-8. Wie Sie im rechten Bereich sehen können, wurden keiner der Smart Lockout-Parameter definiert. Anstatt diese Sperrparameter im Gruppenrichtlinienverwaltungs-Editor zu verwalten, verwenden Sie das Microsoft Entra Admin Center. Sie können den Gruppenrichtlinienverwaltungs-Editor zwar verwenden, aber diese Methode wird in der Regel in lokalen Active Directory-Umgebungen verwendet. Wir haben Ihnen diesen Editor gezeigt, damit Sie diese Alternative kennenlernen. Organisationen, die ausschließlich cloudbasierte Dienste wie Microsoft 365 verwenden, oder die das Microsoft Entra Admin Center für benutzerfreundlicher als den Gruppenrichtlinienverwaltungs-Editor halten, bevorzugen das **Microsoft Entra Admin Center** zum Zuweisen der entsprechenden Werte im Entra ID-Kontext. <br/>  
+8. Wie Sie im daraufhin angezeigten Bereich sehen können, wurde keiner der Smart Lockout-Parameter definiert. Anstatt diese Sperrparameter im Gruppenrichtlinienverwaltungs-Editor zu verwalten, verwenden Sie das Microsoft Entra Admin Center. Sie können den Gruppenrichtlinienverwaltungs-Editor zwar verwenden, aber diese Methode wird in der Regel in lokalen Active Directory-Umgebungen verwendet. Wir haben Ihnen diesen Editor gezeigt, damit Sie diese Alternative kennenlernen. Organisationen, die ausschließlich cloudbasierte Dienste wie Microsoft 365 verwenden, oder die das Microsoft Entra Admin Center für benutzerfreundlicher als den Gruppenrichtlinienverwaltungs-Editor halten, bevorzugen das **Microsoft Entra Admin Center** zum Zuweisen der entsprechenden Werte im Entra ID-Kontext. <br/>  
 
     Beachten Sie außerdem, dass sich das Sperrverhalten und die Anpassungsoptionen zwischen den beiden Methoden unterscheiden. Mit dem Gruppenrichtlinienverwaltungs-Editor haben Sie genauere Kontrolle über Richtlinieneinstellungen, einschließlich „Kontensperrungsschwelle“, „Sperrdauer“ und „Kontosperrungszähler zurücksetzen nach“. Bei dieser Methode müssen Sie jedoch mit der Gruppenrichtlinie und der Active Directory-Verwaltung vertraut sein. Zudem kann die Kontosperrrichtlinie in Microsoft Entra nicht so umfangreich angepasst werden. ’Die Verwendung ist jedoch einfacher, obwohl einige der in der Gruppenrichtlinie verfügbaren Optimierungsoptionen fehlen. <br/>
 
@@ -282,9 +282,9 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 13. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-14. Wenn das Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke der Fenster aus, um es zu schließen. 
+14. Wenn eines der Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke der Fenster aus, um es zu schließen. 
 
-15. Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im linken Bereich angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
+15. Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im Seitenbereich des Fensters angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
 16. Wählen Sie im Navigationsbereich des **Microsoft 365 Admin Center** die Option **Alle anzeigen** aus. Wählen Sie unter **Admin Center** die Option **Identität** aus, wodurch das **Microsoft Entra Admin Center** auf einer neuen Registerkarte angezeigt wird.
 
