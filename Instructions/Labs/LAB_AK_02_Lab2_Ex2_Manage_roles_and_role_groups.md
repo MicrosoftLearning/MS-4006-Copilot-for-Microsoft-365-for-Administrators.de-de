@@ -212,31 +212,31 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 11. Navigieren Sie in Ihrem **Edge**-Browser zu **https://portal.office.com**. 
 
-12. Sie beginnen mit der Anmeldung bei Microsoft 365 als **Joni Sherman**. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. <br/>
+12. Sie beginnen mit der Anmeldung bei Microsoft 365 als **Joni Sherman**. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Da Sie sich als Joni Sherman anmelden, geben Sie dieses von Ihrem Laborhostinganbieter bereitgestellte **Benutzerkennwort** in das Fenster **Kennwort eingeben** ein. <br>
 
-    **Wichtig:** Ihr Lab-Hostinganbieter hat dem MOD-Administratorkonto ein **Administratives Kennwort** zugewiesen, und Sie haben dem Konto von Holly Dickson beim Erstellen dieses Kontos das gleiche **Administratives Kennwort** zugewiesen. Ihr Lab-Hostinganbieter hat jedoch allen anderen vordefinierten Benutzerkonten ein anderes **Benutzerkennwort** zugewiesen. In Zukunft müssen Sie bei der Anmeldung als anderer Benutzer als MOD-Administrator oder Holly Dickson dieses **Benutzerkennwort** und NICHT das **Administrative Kennwort** eingeben. <br/>
-
-    Da Sie sich als Joni Sherman anmelden, geben Sie dieses **Benutzerkennwort** im Fenster **Kennwort eingeben** ein. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
+    Geben Sie im daraufhin angezeigten Dialogfeld **Kennwort aktualisieren** das von Ihrem Laborhostanbieter bereitgestellte **Benutzerkennwort** in das Feld**Aktuelles Kennwort** ein. Geben Sie dann das neue Benutzerkennwort in das Feld **Neues Kennwort** und **Kennwort bestätigen** ein, und wählen Sie " **Anmelden** aus.
 
 13. Aktivieren Sie im Fenster **Angemeldet bleiben?** das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. Wenn das Fenster **Kennwort speichern** angezeigt wird, wählen Sie **Nie** aus.
 
 14. Wenn in der Mitte der Seite das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, wählen Sie zweimal den Vorwärtspfeil (>) und dann das Häkchen aus, um es zu schließen.
 
-15. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
+15. Wenn ein Fenster **Weitere Apps suchen** oder ein Fenster **Mit Microsoft 365 erstellen** oder ein anderes Einführungsfenster angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
 
-16. Im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Joni, befindet sich auf der linken Seite des Bildschirms ein Navigationsbereich mit den Anwendungen, auf die der Benutzer zugreifen kann. Sie sehen, dass die Option **Administrator** im Bereich **Apps** nicht angezeigt wird. Das liegt daran, dass Joni nie eine Microsoft 365-Administratorrolle zugewiesen wurde. 
+16. Im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Joni, befindet sich auf der Seite des Bildschirms ein Navigationsbereich mit den Anwendungen, auf die der Benutzer zugreifen kann. Sie sehen, dass die Option **Administrator** im Bereich **Apps** nicht angezeigt wird. Das liegt daran, dass Joni nie eine Microsoft 365-Administratorrolle zugewiesen wurde. 
 
 17. Sie melden sich jetzt bei Microsoft 365 als Joni ab. Wählen Sie in **Microsoft Edge** oben rechts auf der Seite **Willkommen bei Microsoft 365** das Benutzersymbol für **Joni Sherman** (der Kreis in der oberen Ecke mit dem Bild von Joni) und im daraufhin angezeigten Fenster von **Joni Sherman** die Option **Abmelden** aus. 
 
 18. Sie melden sich jetzt wieder als **Lynne Robbins** bei Microsoft 365 an. In Ihrer aktuellen **Edge**-Browserregisterkarte sollte die Meldung **Joni, Sie sind jetzt abgemeldet** angezeigt werden. In diesem Fenster haben Sie die Möglichkeit, sich wieder als Joni oder als anderer Benutzer anzumelden. <br/>
 
-    Wählen Sie **Zu einem anderen Konto wechseln** aus, und geben Sie im angezeigten Feld **E-Mail-Adresse** die Adresse **LynneR@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Wählen Sie dann **Anmelden** aus. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie **Anmelden**. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus. 
+    Wählen Sie **Zu einem anderen Konto wechseln** aus, und geben Sie im angezeigten Feld **E-Mail-Adresse** die Adresse **LynneR@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist. Wählen Sie dann **Anmelden** aus. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie **Anmelden**. <br>
+
+    Geben Sie im daraufhin angezeigten Dialogfeld **Kennwort aktualisieren** das von Ihrem Laborhostanbieter bereitgestellte **Benutzerkennwort** in das Feld**Aktuelles Kennwort** ein. Geben Sie dann das neue Benutzerkennwort in das Feld **Neues Kennwort** und **Kennwort bestätigen** ein, und wählen Sie " **Anmelden** aus. 
 
 19. Wenn das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, wählen Sie zweimal den Vorwärtspfeil (>) und dann das Häkchen aus, um das Fenster zu schließen.
 
-20. Wenn das Fenster **Nach weiteren Apps suchen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
+20. Wenn ein Fenster **Weitere Apps suchen** oder ein Fenster **Mit Microsoft 365 erstellen** oder ein anderes Einführungsfenster angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen.
 
-21. Beachten Sie im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Lynne, dass das Symbol **Administrator** im Navigationsbereich auf der linken Seite des Bildschirms angezeigt wird. Dieses Symbol wird angezeigt, da Lynne eine Microsoft 365-Administratorrolle zugewiesen wurde. Wählen Sie das Symbol **Admin** aus, um das Microsoft 365 Admin Center zu öffnen.
+21. Beachten Sie im Fenster **Willkommen bei Microsoft 365**, der Microsoft 365-Startseite von Lynne, dass das Symbol **Administrator** im Navigationsbereich auf der Seite des Bildschirms angezeigt wird. Dieses Symbol wird angezeigt, da Lynne eine Microsoft 365-Administratorrolle zugewiesen wurde. Wählen Sie das Symbol **Admin** aus, um das Microsoft 365 Admin Center zu öffnen.
 
 22. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Benutzer** und dann **Aktive Benutzer** aus. 
 
@@ -252,7 +252,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
     Deaktivieren Sie nun jedoch das Kontrollkästchen **Benutzer muss sein Kennwort bei der ersten Anmeldung ändern**. Beachten Sie die angezeigte Fehlermeldung, die angibt, dass das Kennwort (Pa55w.rd) ein Wort, einen Ausdruck oder eine Zahlenfolge enthält, die leicht erraten werden können. In diesem Fall haben Sie eine Variation des Worts **password** eingegeben, wodurch dieser Fehler ausgelöst wird. Das System erlaubt Ihnen, dieses Kennwort einzugeben, wenn Sie erzwingen, dass der Benutzer es bei der ersten Anmeldung ändert. Wenn Sie jedoch nicht erzwingen, dass der Benutzer bei der ersten Anmeldung ein anderes Kennwort eingibt, ist dieses Kennwort nicht zulässig.
 
-27. Nachdem diese beiden fehlgeschlagenen Kennwortversuche aufgetreten sind, hat Lynne beschlossen, Microsoft 365 das automatische Generieren eines Kennworts zu ermöglichen. Aktivieren Sie das Kontrollkästchen **Kennwort automatisch erstellen**. <br/>
+27. Nachdem diese beiden fehlgeschlagenen Kennwortversuche aufgetreten sind, hat Lynne beschlossen, Microsoft 365 das automatische Generieren eines Kennworts zu ermöglichen. Aktivieren Sie das Kontrollkästchen **Kennwort automatisch erstellen**. 
     
 28. Das automatisch generierte Kennwort ist nur ein temporäres Kennwort, da Lynne erzwingen möchte, dass Diego es bei der nächsten Anmeldung ändert. Überprüfen Sie daher, ob das Kontrollkästchen **Benutzer muss sein Kennwort bei der ersten Anmeldung ändern** aktiviert ist. Wenn nicht, aktivieren Sie es.
 
@@ -264,9 +264,9 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 32. Wenn ein Fenster mit einer Umfrage angezeigt wird, wählen Sie **Abbrechen** aus.
 
-33. Wählen Sie in der Liste **Aktive Benutzer** das **Schlüsselsymbol (Kennwort zurücksetzen)** für **Pradeep Gupta** aus. 
+33. Jetzt möchten Sie das Kennwort von Pradeep Gupta ändern. Wählen Sie in der Liste **Aktive Benutzer** das **Schlüsselsymbol (Kennwort zurücksetzen)** aus, das rechts neben **Pradeep Gupta** angezeigt wird. 
 
-34. Überprüfen Sie im Fenster **Kennwort zurücksetzen** für Pradeep, ob das Kontrollkästchen **Kennwort automatisch erstellen** aktiviert ist. Wenn nicht, aktivieren Sie es jetzt, damit das System automatisch ein Kennwort für Pradeep generiert.  <br/>
+34. Überprüfen Sie im erscheinenden Fenster **Kennwort zurücksetzen** für Pradeep, ob das Kontrollkästchen **Kennwort automatisch erstellen** aktiviert ist. Wenn nicht, aktivieren Sie es jetzt, damit das System automatisch ein Kennwort für Pradeep generiert.  <br/>
 
     Das ist nur ein temporäres Kennwort, da Lynne erzwingen möchte, dass Pradeep es bei seiner nächsten Anmeldung ändert. Überprüfen Sie daher, ob das Kontrollkästchen **Benutzer muss sein Kennwort bei der ersten Anmeldung ändern** aktiviert ist. Wenn nicht, aktivieren Sie es.
     
@@ -284,7 +284,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 40. Im Fenster **Anmeldung blockieren** sollte eine Meldung angezeigt werden, dass Alex jetzt daran gehindert wird, sich anzumelden. Das heißt, dass niemand sich mit Alex‘ Benutzernamen anmelden kann, falls sein Benutzername tatsächlich kompromittiert wurde. Darüber hinaus wird Alex innerhalb von 60 Minuten automatisch von Microsoft-Diensten abgemeldet. Wählen Sie das **X** in der oberen Ecke des Bereichs aus, um diesen zu schließen. 
 
-41. Lynne wurde soeben informiert, dass **Nestor Wilkes** Benutzername ebenfalls potenziell kompromittiert wurde. Wiederholen Sie die Schritte 33 bis 36, um zu verhindern, dass Nestor oder andere seinen Benutzernamen zum Anmelden verwenden. <br/>
+41. Lynne wurde soeben informiert, dass **Nestor Wilkes** Benutzername ebenfalls potenziell kompromittiert wurde. Wiederholen Sie die Schritte 37 bis 40, um zu verhindern, dass Nestor oder andere seinen Benutzernamen zum Anmelden verwenden. <br/>
 
     Wenn Sie versucht haben, die Anmeldung von Nestor zu blockieren, sollten Sie die Fehlermeldung **Ihre Änderungen konnten nicht gespeichert werden.** erhalten haben. Sie haben diesen Fehler erhalten, weil Nestor ein globaler Administrator ist und Lynne nicht. Nur ein globaler Administrator kann verhindern, dass ein anderer globaler Administrator sich anmelden kann. Lynne muss Holly Dickson bitten, diese Änderung vorzunehmen. <br/>
 
@@ -306,7 +306,7 @@ In dieser Aufgabe beginnen Sie mit der Untersuchung der Administratoreigenschaft
 
 46. Auf **LON-CL1** sollten Sie in Ihrem Edge-Browser weiterhin bei **Microsoft 365** als Holly Dickson angemeldet sein. Die Liste **Aktive Benutzer** sollte im **Microsoft 365 Admin Center** noch von früher in dieser Aufgabe angezeigt werden. 
 
-47. Nach weiteren Untersuchungen hat der CTO von Adatum festgestellt, dass Alex Wilbers Konto tatsächlich nicht kompromittiert wurde. Daher hat der CTO Holly gebeten, die Blockierung von Alex‘ Benutzerkonto zu entfernen. Wiederholen Sie die Schritte 33 bis 36, um die Blockierung seines Kontos aufzuheben. Beachten Sie, dass das Fenster **Anmeldung blockieren** aus Schritt 35 jetzt stattdessen **Anmeldungsblockierung aufheben** anzeigt.  <br/>
+47. Nach weiteren Untersuchungen hat der CTO von Adatum festgestellt, dass Alex Wilbers Konto tatsächlich nicht kompromittiert wurde. Daher hat der CTO Holly gebeten, die Blockierung von Alex‘ Benutzerkonto zu entfernen. Wiederholen Sie die Schritte 37 bis 40, um die Blockierung seines Kontos aufzuheben. Beachten Sie, dass das Fenster **Anmeldung blockieren** aus Schritt 39 jetzt stattdessen **Anmeldungsblockierung aufheben** anzeigt.  <br/>
 
     Im Fenster **Anmeldungsblockierung aufheben** ist das Kontrollkästchen **Diesen Benutzer an der Anmeldung hindern** derzeit aktiviert. Deaktivieren Sie dieses Kontrollkästchen, und wählen Sie dann **Änderungen speichern** aus. <br/>
     

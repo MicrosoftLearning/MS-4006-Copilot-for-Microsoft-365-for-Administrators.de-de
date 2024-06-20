@@ -22,41 +22,56 @@ Sie melden sich mit dem lokalen Adatum\Administratorkonto beim Client 1-PC (LON-
 
 ### Aufgabe 1: Einrichten des Organisationsprofils von Adatum
 
-In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von Holly Dickson, der Microsoft 365-Administratorin von Adatum, übernehmen. In Ihrer Rolle als Holly wurden Sie beauftragt, das Profil des Unternehmens für den Microsoft 365-Testmandanten einzurichten. In dieser Aufgabe konfigurieren Sie die erforderlichen Optionen für den Mandanten von Adatum. Da Holly noch kein persönliches Microsoft 365-Benutzerkonto für sich selbst erstellt hat (Sie werden dies in der nächsten Übungsübung tun), wird Holly sich zunächst mit dem standardmäßigen Microsoft 365-Mandantenadministratorkonto und dem Kennwort bei Microsoft 365 anmelden, das von Ihrem Lab-Hostinganbieter erstellt wurde. Dieses Konto ist das **MOD-Administratorkonto**, dessen Alias "Administrator" ist. Der Benutzername für dieses Konto lautet **admin@xxxxxZZZZZZ.onmicrosoft.com** (wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen wird). Der Anzeigename für dieses Konto ist MOD-Administrator.
+In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von Holly Dickson, der Microsoft 365-Administratorin von Adatum, übernehmen. In Ihrer Rolle als Holly wurden Sie beauftragt, das Profil des Unternehmens für den Microsoft 365-Testmandanten einzurichten. In dieser Aufgabe konfigurieren Sie die erforderlichen Optionen für den Mandanten von Adatum. Da Holly noch kein persönliches Microsoft 365-Benutzerkonto für sich selbst erstellt hat (Sie werden dies in der nächsten Übungsübung tun), wird Holly sich zunächst mit dem standardmäßigen Microsoft 365-Mandantenadministratorkonto und dem Kennwort bei Microsoft 365 anmelden, das von Ihrem Lab-Hostinganbieter erstellt wurde. Dieses Konto ist das MOD-Administratorkonto, dessen Alias "Administrator" ist. Der Benutzername für dieses Konto lautet admin@xxxxxZZZZZZ.onmicrosoft.com (wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen wird). Der Anzeigename für dieses Konto ist MOD-Administrator.
 
-1. Wenn Sie die Virtual Machine-Umgebung Ihres Lab-Hostinganbieters öffnen, müssen Sie mit der Client 1-VM (LON-CL1) beginnen. Wenn Ihre VM-Umgebung mit einem der anderen Computer (z. B. LON-DC1) geöffnet wird, wechseln Sie jetzt zu **LON-CL1**.
+1. Ihr Laborhostinganbieter stellt zwei Kennwörter bereit, die mit den fiktiven Benutzerkonten in Ihrem Microsoft 365-Testmandanten verwendet werden. Dem MOD-Administratorkonto, bei dem es sich um den Standardmandantenadministrator handelt, wurde das **Administratorkennwort** zugewiesen. Allen anderen Benutzern – auch denen, denen eine Administratorrolle zugewiesen wurde – wurde das **Benutzerkennwort** zugewiesen. <br>
 
-2. Melden Sie sich bei **LON-CL1** als lokales **Administratorkonto** an, das von Ihrem Lab-Hostinganbieter mit dem Kennwort **Pa55w.rd** erstellt wurde. 
+    Aus Sicherheitsgründen hat Microsoft Ihren Testmandanten so konfiguriert, dass alle vordefinierten Benutzer ihr Kennwort bei der nächsten Anmeldung ändern müssen. Einige Laborhostinganbieter stellen möglicherweise zwei neue Kennwortfelder bereit, eines für Administratoren (tatsächlich der MOD-Administrator und Holly Dickson) und eines für alle anderen Benutzer. Wenn diese beiden neuen Kennwortfelder in Ihrem virtuellen Computer angezeigt werden, geben Sie jeweils ein neues Kennwort ein. Diese neuen Kennwortwerte werden auf dem virtuellen Computer gespeichert und in den Laboranweisungen angezeigt. <br>
+ 
+    Andere Laborhostinganbieter stellen diese neuen Kennwortfelder möglicherweise nicht bereit. Für diese Umgebungen müssen Sie das neue Kennwort manuell notieren, das Sie Benutzern zuweisen möchten, die sich anmelden. <br>
 
-3. Wählen Sie auf der Taskleiste unten auf dem Bildschirm das **Microsoft Edge-Symbol** aus. Maximieren Sie bei Bedarf das Browserfenster, wenn es geöffnet wird.
+    Beachten Sie beim Entwerfen Ihrer neuen Kennwörter die Kennwortrichtlinien von Microsoft: <br>
 
-4. Wechseln Sie in Ihrem Edge-Browser zur **Microsoft 365-Startseite**, indem Sie die folgende URL in die Adressleiste eingeben: **https://portal.office.com**. 
+    - Mindestlänge von 8 Zeichen mit mindestens:
+       - 1 Großbuchstaben
+       - 1 Kleinbuchstaben
+       - 1 Sonderzeichen Die Kennwörter werden erst nach den Anforderungen von Microsoft überprüft, wenn Sie das alte Kennwort bei der nächsten Anmeldung des Benutzers ändern.
 
-5. Geben Sie im daraufhin angezeigten Dialogfeld **Anmelden** den von Ihrem Labhostinganbieter bereitgestellten **Administratorbenutzernamen** ein (dies ist das MOD-Administratorkonto). Der Benutzername sollte das Format **admin@xxxxxZZZZZZ.onmicrosoft.com** haben, wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen ist. Wählen Sie **Weiter** aus. <br/>
+2. Wenn Sie die Virtual Machine-Umgebung Ihres Lab-Hostinganbieters öffnen, müssen Sie mit der Client 1-VM (LON-CL1) beginnen. Wenn Ihre VM-Umgebung mit einem der anderen Computer (z. B. LON-DC1) geöffnet wird, wechseln Sie jetzt zu **LON-CL1**.
+
+3. Melden Sie sich bei **LON-CL1** als lokales **Administratorkonto** an, das von Ihrem Lab-Hostinganbieter mit dem Kennwort **Pa55w.rd** erstellt wurde. 
+
+4. Wählen Sie auf der Taskleiste unten auf dem Bildschirm das **Microsoft Edge-Symbol** aus. Maximieren Sie bei Bedarf das Browserfenster, wenn es geöffnet wird.
+
+5. Wechseln Sie in Ihrem Edge-Browser zur **Microsoft 365-Startseite**, indem Sie die folgende URL in die Adressleiste eingeben: **https://portal.office.com**. 
+
+6. Geben Sie im Dialogfeld **Anmelden** den von Ihrem Labhostinganbieter bereitgestellten **Administratorbenutzernamen** (dies ist das MOD-Administratorkonto) für Ihren Microsoft 365 Testmandanten ein. Der Benutzername sollte das Format **admin@xxxxxZZZZZZ.onmicrosoft.com** haben, wobei xxxxxZZZZZZ das Mandantenpräfix ist, das Ihrem Lab-Hostinganbieter zugewiesen ist. Wählen Sie **Weiter** aus. <br/>
 
     **Hinweis:** In den Labanweisungen, die in Ihrer VM-Labumgebung angezeigt werden, bietet Ihr Labhostinganbieter ggf. die Möglichkeit, neben Ressourcendaten wie Benutzernamen, Kennwörtern, PowerShell-Befehlen und anderen Daten, die während dieser Labs eingegeben werden müssen, eine Schaltfläche **Text eingeben** (oder eine entsprechende Schaltfläche) auszuwählen. Andere Lab-Hostinganbieter können eine alternative Methode bereitstellen, z. B. die Möglichkeit, diese Informationen zu kopieren und einzufügen. Nutzen Sie diese Funktionalität, damit Sie diese Informationen nicht manuell eingeben müssen. 
 
-6. Geben Sie im Dialogfeld **Kennwort eingeben** das **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
+7. Geben Sie im Dialogfeld **Kennwort eingeben** das voreingestellte **Administratorkennwort** ein, das von Ihrem Labhostinganbieter bereitgestellt wurde, und wählen Sie dann **Anmelden** aus. 
 
-7. Aktivieren Sie im Dialogfeld **Angemeldet bleiben?** das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. Wählen Sie im daraufhin angezeigten Dialogfeld **Kennwort speichern** die Option **Nie** aus.
+8. Ihr Lab-Hostinganbieter hat möglicherweise das MOD-Administratorkonto so konfiguriert, dass bei der Anmeldung ein neues Kennwort erforderlich ist. Wenn dies der Vorgang getan hat, wird ein Dialogfeld **Kennwort aktualisieren** angezeigt. Geben Sie in diesem Fall das von Ihrem Laborhostinganbieter bereitgestellte **Verwaltungskennwort** in das Feld **Aktuelles Kennwort** ein, und geben Sie dann das neue Verwaltungskennwort in das Feld **Neues Kennwort** ein, und **bestätigen Sie die Kennwortfelder**, und wählen Sie **Anmelden** aus.
 
-8. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
+9. Wenn das Dialogfeld **Angemeldet bleiben?** angezeigt wird, aktivieren Sie das Kontrollkästchen **Nicht mehr anzeigen**, und wählen Sie dann **Ja** aus. 
 
-9. Wenn eines der Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke der Fenster aus, um es zu schließen. 
+10. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-10. Die Seite **Willkommen bei Microsoft 365** wird in Ihrem Edge-Browser auf der Registerkarte **Home | Microsoft 365** angezeigt. Dies ist die Microsoft 365-Startseite des MOD-Administrators. <br/>
+11. Wenn ein Dialogfeld **Weitere Apps suchen** oder ein Dialogfeld **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke der Felder aus, um sie zu schließen. Wenn eine Anmeldung in Microsoft Edge-Dialogfeld angezeigt wird, wählen Sie auch die Schaltfläche **Nein danke** aus.
 
-    Beachten Sie das Symbol, das in der oberen rechten Ecke des Bildschirms angezeigt wird. Dieses Symbol stellt das **MOD-Administratorkonto** dar, bei dem es sich um das Mandantenadministratorkonto handelt, das von Ihrem Lab-Hostinganbieter erstellt wurde, als das Sie sich soeben angemeldet haben. Die anderen vorhandenen Microsoft 365-Benutzerkonten, die von Ihrem Lab-Hostinganbieter erstellt wurden, weisen ein Bild auf, das jedem ihrer Konten zugeordnet ist. Wenn Sie sich daher als Benutzer in späteren Labs anmelden, wird das Bild des Benutzers anstelle der Initialen des Benutzers angezeigt. Wenn einem Benutzer wie dem MOD-Administrator jedoch kein Bild zugewiesen ist, werden entweder die Initialen des Benutzers anstelle des Bilds angezeigt, oder wie in diesem Fall ein Symbol, das dem Konto zugewiesen wurde. <br/>
+12. Die Seite **Willkommen bei Microsoft 365** wird in Ihrem Edge-Browser auf der Registerkarte **Home | Microsoft 365** angezeigt. Dies ist die Microsoft 365-Startseite des MOD-Administrators. <br/>
+
+    Beachten Sie, dass entweder ein Symbol oder ein Kreis mit "MA" (die Initialen für MOD-Administrator) in der oberen rechten Ecke des Bildschirms angezeigt wird. Einige Testmandanten zeigen ein Symbol an; andere zeigen die "MA"-Initialen in einem Kreis an; Alles hängt davon ab, ob Ihr Lab-Hostinganbieter dem Konto des MOD-Administrators ein Symbol hinzugefügt hat. Dieses Symbol oder diese Initialen stellen das **MOD-Administratorkonto** dar, bei dem es sich um das Mandantenadministratorkonto handelt, das von Ihrem Lab-Hostinganbieter erstellt wurde, als das Sie sich soeben angemeldet haben. Wenn eines der vorhandenen Microsoft 365-Benutzerkonten, die von Ihrem Laborhostinganbieter erstellt wurden, ein Bild mit seinem Konto verknüpft ist, wird das Bild des Benutzers anstelle der Initialen des Benutzers angezeigt, wenn Sie sich bei Microsoft 365 als diesem Benutzer anmelden. Wenn einem Benutzer, beispielsweise dem MOD-Administrator, jedoch kein Bild zugewiesen ist, werden anstelle des Bilds entweder die Initialen des Benutzers oder ein Symbol angezeigt, wenn dem Konto von Ihrem Labor-Hosting-Anbieter eines zugewiesen wurde. <br/>
 
     Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im Navigationsbereich angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
-11. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Alle anzeigen** und dann **Einstellungen ** aus. Wählen Sie in der Gruppe **Einstellungen** die Option **Organisationseinstellungen** aus. 
+13. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Alle anzeigen** und dann **Einstellungen ** aus. Wählen Sie in der Gruppe **Einstellungen** die Option **Organisationseinstellungen** aus. 
 
-12. Auf der Seite **Organisationseinstellungen** wird standardmäßig die Registerkarte **Dienste** angezeigt. Wählen Sie die Registerkarte **Organisationsprofil** aus.
+14. Auf der Seite **Organisationseinstellungen** wird standardmäßig die Registerkarte **Dienste** angezeigt. Wählen Sie die Registerkarte **Organisationsprofil** aus.
 
-13. Wählen Sie auf der Registerkarte **Organisationsprofil** die Option **Organisationsinformationen** aus der Liste der Profildaten aus.
+15. Wählen Sie auf der Registerkarte **Organisationsprofil** die Option **Organisationsinformationen** aus der Liste der Profildaten aus.
 
-14. Geben Sie im angezeigten Bereich **Organisationsinformationen** die folgenden Informationen ein: <br/>
+16. Geben Sie im angezeigten Bereich **Organisationsinformationen** die folgenden Informationen ein: <br/>
 
     - Name: **Adatum Corporation** (Anmerkung: Adatum Corporation ist eine Tochtergesellschaft der Contoso Inc. Der Microsoft-Testmandant, den Ihr Lab-Hostinganbieter für dieses Lab erhalten hat, wurde möglicherweise ursprünglich Contoso zugewiesen. Wenn **Contoso** (oder ein anderer Wert) als Organisationsname angezeigt wird, ändern Sie ihn in **Adatum Corporation**.)
 
@@ -74,11 +89,11 @@ In den Labs in diesem Kurs werden Sie Rollen spielen, indem Sie die Persona von 
 
     - Bevorzugte Sprache: **Englisch**
 
-15. Wählen Sie **Speichern**.
+17. Wählen Sie **Speichern**.
 
-16. Beachten Sie oben im Bereich **Organisationsinformationen** die Meldung, die angibt, dass die Änderungen gespeichert wurden. Wählen Sie das **X** in der oberen Ecke des Bereichs aus, um diesen zu schließen.
+18. Beachten Sie oben im Bereich **Organisationsinformationen** die Meldung, die angibt, dass die Änderungen gespeichert wurden. Wählen Sie das **X** in der oberen Ecke des Bereichs aus, um diesen zu schließen.
 
-17. Bleiben Sie für die nächste Aufgabe bei **LON-CL1** angemeldet, mit Microsoft Edge im **Microsoft 365 Admin Center** geöffnet.
+19. Bleiben Sie für die nächste Aufgabe bei **LON-CL1** angemeldet, mit Microsoft Edge im **Microsoft 365 Admin Center** geöffnet.
 
 ### Aufgabe 2: Erstellen eines benutzerdefinierten Designs für das Pilotprojektteam von Adatum
 
