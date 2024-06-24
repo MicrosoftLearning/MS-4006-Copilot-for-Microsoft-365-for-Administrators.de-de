@@ -22,21 +22,21 @@ Die andere Auswirkung dieser Richtlinie besteht darin, dass Sie MFA nicht bei de
 
 Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kein Microsoft 365-Benutzerkonto für sie eingerichtet wurde, hat sie sich im vorherigen Lab zunächst mit dem MOD-Administratorkonto (der standardmäßige globale Administrator) bei Microsoft 365 angemeldet. In dieser Aufgabe bleiben Sie weiterhin als MOD-Administrator angemeldet, wo Sie ein Microsoft 365-Benutzerkonto für Holly erstellen. Außerdem weisen Sie die dem Konto von Holly die Microsoft 365-Rolle „Globaler Administrator“ zu. Diese Rolle erteilt Holly die erforderlichen Berechtigungen, um alle administrativen Funktionen in Microsoft 365 auszuüben. Nach dieser Aufgabe melden Sie sich mit dem neuen Konto von Holly an, und Sie absolvieren alle verbleibenden Labs mit Hollys Persona. 
 
-**Lizenzhinweis:** Vor dem Erstellen des Hollys Kontos überprüfen Sie zuerst die Anzahl der verfügbaren Lizenzen. Dabei werden Sie feststellen, dass Ihr Labmandant zwar 20 Microsoft 365 E5-Lizenzen und 20 Enterprise Mobility + Security E5-Lizenzen bereitstellt, aber alle diese Lizenzen bereits den Benutzerkonten zugewiesen wurden, die von Ihrem Labhostinganbieter erstellt wurden. Daher müssen Sie zuerst eine Lizenz jeder Sorte von einem anderen Benutzer entziehen, damit Sie sie Holly zuweisen können.
+**Lizenzhinweis:** Vor dem Erstellen des Hollys Kontos überprüfen Sie zuerst die Anzahl der verfügbaren Lizenzen. Dabei werden Sie feststellen, dass Ihr Labmandant zwar 20 Microsoft 365 E5-Lizenzen (ohne Teams) und 20 Microsoft Teams Enterprise-Lizenzen bereitstellt, aber alle diese Lizenzen bereits den Benutzerkonten zugewiesen wurden, die von Ihrem Labhostinganbieter erstellt wurden. Daher müssen Sie zuerst eine Lizenz jeder Sorte von einem anderen Benutzer entziehen, damit Sie sie Holly zuweisen können.
 
-**Wichtig:** Als bewährte Methode in Ihrer realen Bereitstellung sollten Sie immer die Anmeldeinformationen des ersten globalen Administratorkontos notieren. In diesem Lab ist es das MOD-Administratorkonto, dessen Benutzername admin@xxxxxZZZZZZ.onmicrosoft.com ist. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihrem Labhostinganbieter zugewiesen ist. Sie sollten diese Kontoinformationen aus Sicherheitsgründen gut geschützt aufbewahren. **Dieses Konto sollte eine nicht personalisierte Identität** sein, die über die höchsten Berechtigungen verfügt, die in einem Mandanten möglich sind. Die MFA sollte **nicht** aktiviert werden, da sie nicht personalisiert ist. Da der Benutzername und das Kennwort für dieses erste globale Administratorkonto in der Regel von mehreren Benutzern gemeinsam verwendet werden, ist dieses Konto ein perfektes Ziel für Angriffe. Daher wird immer empfohlen, dass Organisationen personalisierte Dienstadministratorkonten (z. B. einen Exchange-Administrator, SharePoint-Administrator usw.) erstellen und so wenige persönliche globale Administratoren wie möglich haben. Die persönlichen globalen Administratoren, die Sie in Ihrer realen Bereitstellung erstellen, sollten jeweils einem einzelnen Benutzer (z. B. Holly Dickson) zugeordnet werden, und für jedes sollte die Multi-Faktor-Authentifizierung (MFA) von Microsoft Entra erzwungen werden. Microsoft hat MFA also bereits standardmäßig für alle Benutzer in Ihrem Microsoft 365-Testmandanten aktiviert.
+**Wichtig:** Als bewährte Methode in Ihrer realen Bereitstellung sollten Sie immer die Anmeldeinformationen des ersten globalen Administratorkontos notieren. In diesem Lab ist es das MOD-Administratorkonto, dessen Benutzername admin@xxxxxZZZZZZ.onmicrosoft.com ist. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihrem Labhostinganbieter zugewiesen ist. Sie sollten diese Kontoinformationen aus Sicherheitsgründen gut geschützt aufbewahren. **Dieses Konto sollte eine nicht personalisierte Identität** sein, die über die höchsten Berechtigungen verfügt, die in einem Mandanten möglich sind. Die MFA sollte **nicht** aktiviert werden, da sie nicht personalisiert ist. Da der Benutzername und das Kennwort für dieses erste globale Administratorkonto in der Regel von mehreren Benutzern gemeinsam verwendet werden, ist dieses Konto ein perfektes Ziel für Angriffe. Daher wird immer empfohlen, dass Organisationen personalisierte Dienstadministratorkonten (z. B. einen Exchange-Administrator, SharePoint-Administrator usw.) erstellen und so wenige persönliche globale Administratoren wie möglich haben. Die persönlichen globalen Administratoren, die Sie in Ihrer realen Bereitstellung erstellen, sollten jeweils einem einzelnen Benutzer (z. B. Holly Dickson) zugeordnet werden, und für jedes sollte die Multi-Faktor-Authentifizierung (MFA) von Microsoft Entra erzwungen werden.
 
 1. Auf der VM **LON-CL1** sollte das **Microsoft 365 Admin Center** in Microsoft Edge aus der vorherigen Labübung noch geöffnet sein. Sie sollten bei Microsoft 365 als **MOD-Administrator** angemeldet sein. 
 
 2. Da Sie einen neuen Benutzer hinzufügen, sollten Sie zunächst die Lizenzverfügbarkeit überprüfen, bevor Sie das Benutzerkonto hinzufügen. Wählen Sie im **Microsoft 365 Admin Center**-Navigationsbereich **Abrechnung** aus, um die Abrechnungsgruppe zu erweitern, und wählen Sie dann **Lizenzen** aus. 
 
-3. Auf der Seite **Lizenzen** wird standardmäßig die Registerkarte **Abonnements** angezeigt. Beachten Sie in der Liste der Abonnements, dass die Abonnements **Enterprise Mobility + Security E5** und **Microsoft 365 E5** keine verfügbaren Lizenzen haben. Ihr Labmandant stellt 20 Lizenzen für jedes Abonnement bereit, aber alle 40 Lizenzen wurden zugewiesen. Da Sie Holly sowohl eine **Enterprise Mobility + Security E5**-Lizenz als auch eine **Microsoft 365 E5**-Lizenz zuweisen müssen, müssen Sie die Lizenzen zunächst einem anderen Benutzerkonto entziehen, um sie für Holly verfügbar zu machen. 
+3. Auf der Seite **Lizenzen** wird standardmäßig die Registerkarte **Abonnements** angezeigt. Beachten Sie in der Liste der Abonnements, dass Microsoft **365 E5 (ohne Teams)** und **Microsoft Teams Enterprise-Abonnements** keine verfügbaren Lizenzen haben. Ihr Labmandant stellt 20 Lizenzen für jedes Abonnement bereit, aber alle 40 Lizenzen wurden zugewiesen. Da Sie Holly sowohl eine **Microsoft 365 E5 (ohne Teams)**-Lizenz als auch eine **Microsoft Teams Enterprise**-Lizenz zuweisen müssen, müssen Sie die Lizenzen zunächst einem anderen Benutzerkonto entziehen, um sie für Holly verfügbar zu machen. 
 
-4. Wählen Sie im **Microsoft 365 Admin Center**-Navigationsbereich **Benutzer** und dann **Aktive Benutzer** aus. In der Liste **Aktive Benutzer** wird die Liste der vorhandenen Benutzerkonten angezeigt, die von Ihrem Labhostinganbieter erstellt wurden. Da Christie Cline in eine neue Rolle im Unternehmen annimmt und nicht mehr Teil des Microsoft 365-Pilotprojekts ist, entziehen Sie ihrem Konto die **Enterprise Mobility + Security E5**- und **Microsoft 365 E5**-Lizenzen, damit Sie sie dem neuen Konto von Holly Dickson zuweisen können.
+4. Wählen Sie im **Microsoft 365 Admin Center**-Navigationsbereich **Benutzer** und dann **Aktive Benutzer** aus. In der Liste **Aktive Benutzer** wird die Liste der vorhandenen Benutzerkonten angezeigt, die von Ihrem Labhostinganbieter erstellt wurden. Da Christie Cline in eine neue Rolle im Unternehmen annimmt und nicht mehr Teil des Microsoft 365-Pilotprojekts ist, entziehen Sie ihrem Konto die **Microsoft 365 E5 (ohne Teams)**- und **Microsoft Teams Enterprise**-Lizenzen, damit Sie sie dem neuen Konto von Holly Dickson zuweisen können.
 
 5. Wählen Sie auf der Seite **Aktive Benutzer** in der Liste der Benutzer **Christie Cline** aus. Wählen Sie Christies verlinkten Namen und nicht das Kontrollkästchen neben ihrem Namen aus.
 
-6. Im erscheinenden Bereich **Christie Cline** wird standardmäßig die Registerkarte **Konto** angezeigt. Wählen Sie die Registerkarte **Lizenzen und Apps** aus. Deaktivieren Sie unter **Lizenzen (2)** die Kontrollkästchen neben **Enterprise Mobility + Security E5** und **Microsoft 365 E5**, und wählen Sie dann **Änderungen speichern** aus. Nachdem die Änderungen gespeichert wurden, schließen Sie den Bereich **Christie Cline**.
+6. Im erscheinenden Bereich **Christie Cline** wird standardmäßig die Registerkarte **Konto** angezeigt. Wählen Sie die Registerkarte **Lizenzen und Apps** aus. Aktivieren Sie unter **Lizenzen (2)** die Kontrollkästchen neben **Microsoft 365 E5 (ohne Teams)** und **Microsoft Teams Enterprise**, um sie zu löschen, und wählen Sie dann **Änderungen **speichern aus. Nachdem die Änderungen gespeichert wurden, schließen Sie den Bereich **Christie Cline**. 
 
 7. Sie können jetzt ein Benutzerkonto für Holly Dickson erstellen, die die neue Microsoft 365-Administratorin von Adatum ist. Dabei weisen Sie Holly die Microsoft 365-Rolle „Globaler Administrator“ zu, die ihr globalen Zugriff auf die meisten Verwaltungsfeatures und -daten in Microsoft-Onlinediensten gewährt. Außerdem weisen Sie Holly die beiden Lizenzen zu, die Sie Christie Cline gerade entzogen haben. <br/>
 
@@ -56,7 +56,7 @@ Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kei
     
     - Deaktivieren Sie das Kontrollkästchen **Kennwort automatisch erstellen**, wodurch ein neues Feld für die Eingabe eines vom Administrator definierten Kennworts angezeigt wird.
 
-    - Geben Sie im erscheinenden neuen Feld **Kennwort** das **Administratorkennwort** ein, das Ihr Labhostinganbieter für das Mandantenadministratorkonto (z. B. das MOD-Administratorkonto) bereitgestellt hat.
+    - Geben Sie das neue administrative Kennwort in das neue Feld **Kennwort** ein, das angezeigt wird. 
 
     - Deaktivieren Sie das Kontrollkästchen **Benutzer muss sein Kennwort bei der ersten Anmeldung ändern**. 
 
@@ -66,7 +66,7 @@ Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kei
 
     - Standort: **USA**
 
-    - Lizenzen: Aktivieren Sie unter der Option **Benutzer eine Produktlizenz zuweisen** die Kontrollkästchen **Enterprise Mobility + Security E5** und **Microsoft 365 E5**.
+    - Lizenzen: Aktivieren Sie unter der Option **Benutzer eine Produktlizenz zuweisen** die Kontrollkästchen **Microsoft 365 E5" (kein Teams)** und **"Microsoft Teams Enterprise"**.
 
 11. Wählen Sie **Weiter** aus.
 
@@ -91,6 +91,7 @@ Holly Dickson ist die neue Microsoft 365-Administratorin von Adatum. Da noch kei
 18. Wählen Sie **Schließen** aus.
 
 19. Bleiben Sie bei der Client-VM 1 (LON-CL1) angemeldet, und lassen Sie das Microsoft 365 Admin Center in Ihrem Browser für die nächste Aufgabe geöffnet.
+
 
 ### Aufgabe 2: Hinzufügen von Holly zur Microsoft 365-Pilotprojektgruppe
 
@@ -118,11 +119,11 @@ In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglie
 
 6. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-7. Wenn das Fenster **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke des Fensters aus, um es zu schließen. 
+7. Wenn das Fenster **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke des Fensters aus, um es zu schließen. 
 
 8. Die Seite **Willkommen bei Microsoft 365** wird in Ihrem Edge-Browser auf der Registerkarte **Startseite | Microsoft 365** angezeigt. Das ist die Microsoft 365-Willkommensseite von Holly. Sie sehen, dass Hollys Initialen in der oberen rechten Ecke des Bildschirms angezeigt werden, ihr Name jedoch nicht. Das liegt daran, dass Hollys Konto zu dem Zeitpunkt, als Sie die Microsoft 365-Pilotprojektbenutzer zur Gruppe hinzugefügt haben, die dem benutzerdefinierten Design in der vorherigen Labübung zugeordnet war, nicht vorhanden war. Da Holly ihren Namen oben in jedem Microsoft 365-Fenster sehen möchte, wenn sie beim System angemeldet ist, möchte sie zuerst ihr Konto zur Gruppe der Microsoft 365-Pilotprojektbenutzer hinzufügen. <br>
 
-    Wählen Sie in der Spalte der Anwendungssymbole, die auf der linken Seite des Bildschirms angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
+    Wählen Sie in der Spalte der Anwendungssymbole, die im Navigationsbereich an der Seite des Bildschirms angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
 9. Wählen Sie im **Microsoft 365 Admin Center** im Navigationsbereich **Teams und Gruppen** und dann **Aktive Teams und Gruppen** aus. 
 
@@ -130,7 +131,7 @@ In einer vorherigen Aufgabe haben Sie eine Microsoft 365-Gruppe für die Mitglie
 
 11. Im angezeigten Bereich **M365 pilot project** wird standardmäßig die Registerkarte **Allgemein** angezeigt. Wählen Sie die Registerkarte **Mitgliedschaft** aus.
 
-12. Auf der Registerkarte **Mitgliedschaft** wird die Unterregisterkarte **Besitzer** standardmäßig im Navigationsbereich angezeigt, der sich auf der linken Seite des Bereichs befindet. Wählen Sie die Unterregisterkarte **Mitglieder** aus, die darunter angezeigt wird.
+12. Auf der Registerkarte **Mitgliedschaft** wird die Unterregisterkarte **Besitzer** standardmäßig im Navigationsbereich angezeigt, der sich an der Seite des Bereichs befindet. Wählen Sie die Unterregisterkarte **Mitglieder** aus, die darunter angezeigt wird.
 
 13. Wählen Sie auf der Unterregisterkarte **Mitglieder** die Option **+ Mitglieder hinzufügen** aus.
 
@@ -256,17 +257,17 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 3. Auf LON-DC1 wird der **Server-Manager** beim Start automatisch gestartet. Wählen Sie im **Server-Manager** in der oberen rechten Menüleiste **Extras** aus, und wählen Sie dann im Dropdownmenü **Gruppenrichtlinienverwaltung** aus. Maximieren Sie das angezeigte Fenster **Gruppenrichtlinienverwaltung**.
 
-4. Sie sollten die Gruppenrichtlinie bearbeiten, die die Kontosperrrichtlinie Ihrer Organisation enthält. Erweitern Sie bei Bedarf in der Stammkonsolenstruktur im linken Bereich **Forest:Adatum.com**, dann **Domänen** und dann **Adatum.com**.  <br/>
+4. Sie sollten die Gruppenrichtlinie bearbeiten, die die Kontosperrrichtlinie Ihrer Organisation enthält. Erweitern Sie bei Bedarf in der Stammkonsolenstruktur im Seitenbereich **Forest:Adatum.com**, dann **Domänen** und dann **Adatum.com**.  <br/>
 
     ‎Klicken Sie unter **Adatum.com** mit der rechten Maustaste auf **Standarddomänenrichtlinie**, und wählen Sie dann im Menü **Bearbeiten** aus.
 
 5. Maximieren Sie das angezeigte Fenster **Gruppenrichtlinienverwaltungs-Editor**.
 
-6. Erweitern Sie in der Struktur **Standarddomänenrichtlinie** im linken Bereich unter **Computerkonfiguration** die Option **Richtlinien**, und erweitern Sie **Windows-Einstellungen**, dann **Sicherheitseinstellungen** und dann **Kontorichtlinien**.
+6. Erweitern Sie in der Struktur **Standarddomänenrichtlinie** im Seitenbereich unter **Computerkonfiguration** die Option **Richtlinien**, und erweitern Sie dann **Windows-Einstellungen**, **Sicherheitseinstellungen** und dann **Kontorichtlinien**.
 
 7. Wählen Sie im Ordner **Kontorichtlinien** die Option **Kontosperrrichtlinie** aus.
 
-8. Wie Sie im rechten Bereich sehen können, wurden keiner der Smart Lockout-Parameter definiert. Anstatt diese Sperrparameter im Gruppenrichtlinienverwaltungs-Editor zu verwalten, verwenden Sie das Microsoft Entra Admin Center. Sie können den Gruppenrichtlinienverwaltungs-Editor zwar verwenden, aber diese Methode wird in der Regel in lokalen Active Directory-Umgebungen verwendet. Wir haben Ihnen diesen Editor gezeigt, damit Sie diese Alternative kennenlernen. Organisationen, die ausschließlich cloudbasierte Dienste wie Microsoft 365 verwenden, oder die das Microsoft Entra Admin Center für benutzerfreundlicher als den Gruppenrichtlinienverwaltungs-Editor halten, bevorzugen das **Microsoft Entra Admin Center** zum Zuweisen der entsprechenden Werte im Entra ID-Kontext. <br/>  
+8. Wie Sie im daraufhin angezeigten Bereich sehen können, wurde keiner der Smart Lockout-Parameter definiert. Anstatt diese Sperrparameter im Gruppenrichtlinienverwaltungs-Editor zu verwalten, verwenden Sie das Microsoft Entra Admin Center. Sie können den Gruppenrichtlinienverwaltungs-Editor zwar verwenden, aber diese Methode wird in der Regel in lokalen Active Directory-Umgebungen verwendet. Wir haben Ihnen diesen Editor gezeigt, damit Sie diese Alternative kennenlernen. Organisationen, die ausschließlich cloudbasierte Dienste wie Microsoft 365 verwenden, oder die das Microsoft Entra Admin Center für benutzerfreundlicher als den Gruppenrichtlinienverwaltungs-Editor halten, bevorzugen das **Microsoft Entra Admin Center** zum Zuweisen der entsprechenden Werte im Entra ID-Kontext. <br/>  
 
     Beachten Sie außerdem, dass sich das Sperrverhalten und die Anpassungsoptionen zwischen den beiden Methoden unterscheiden. Mit dem Gruppenrichtlinienverwaltungs-Editor haben Sie genauere Kontrolle über Richtlinieneinstellungen, einschließlich „Kontensperrungsschwelle“, „Sperrdauer“ und „Kontosperrungszähler zurücksetzen nach“. Bei dieser Methode müssen Sie jedoch mit der Gruppenrichtlinie und der Active Directory-Verwaltung vertraut sein. Zudem kann die Kontosperrrichtlinie in Microsoft Entra nicht so umfangreich angepasst werden. ’Die Verwendung ist jedoch einfacher, obwohl einige der in der Gruppenrichtlinie verfügbaren Optimierungsoptionen fehlen. <br/>
 
@@ -282,9 +283,9 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 13. Wenn in der Mitte des Bildschirms das Dialogfeld **Willkommen bei Microsoft 365** angezeigt wird, gibt es keine Möglichkeit, es zu schließen. Wählen Sie stattdessen rechts neben dem Fenster das Vorwärtspfeilsymbol (**>**) zweimal aus, und wählen Sie dann das Häkchensymbol aus, um durch die Folien in diesem Nachrichtenfenster zu navigieren. 
 
-14. Wenn das Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen rechten Ecke der Fenster aus, um es zu schließen. 
+14. Wenn eines der Fenster **Weitere Apps suchen** oder **Mit Microsoft 365 erstellen** angezeigt wird, wählen Sie das **X** in der oberen Ecke der Fenster aus, um es zu schließen. 
 
-15. Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im linken Bereich angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
+15. Wählen Sie auf der Seite **Willkommen bei Microsoft 365** in der Liste der Anwendungssymbole, die im Seitenbereich des Fensters angezeigt werden, **Administrator** aus. Dadurch wird das **Microsoft 365 Admin Center** auf einer neuen Browserregisterkarte geöffnet. 
 
 16. Wählen Sie im Navigationsbereich des **Microsoft 365 Admin Center** die Option **Alle anzeigen** aus. Wählen Sie unter **Admin Center** die Option **Identität** aus, wodurch das **Microsoft Entra Admin Center** auf einer neuen Registerkarte angezeigt wird.
 

@@ -183,7 +183,7 @@ Stattdessen testen Sie eine der bereits vorhandenen Vertraulichkeitsbezeichnunge
 
 1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein.
 
-2. Sie überprüfen zuerst die **Project – Falcon-** Vertraulichkeitsbezeichnung, die Sie in dieser Aufgabe auf ein Dokument anwenden werden.  In Ihrem Edge-Browser sollte weiterhin eine Registerkarte für das **Microsoft Purview**-Portal aus der vorherigen Aufgabe geöffnet sein. Wählen Sie im **Microsoft Purview**-Portal unter der Gruppe **Informationsschutz** im linken Navigationsbereich **Bezeichnungen** aus. 
+2. Sie überprüfen zuerst die **Project – Falcon-** Vertraulichkeitsbezeichnung, die Sie in dieser Aufgabe auf ein Dokument anwenden werden.  In Ihrem Edge-Browser sollte weiterhin eine Registerkarte für das **Microsoft Purview**-Portal aus der vorherigen Aufgabe geöffnet sein. Wählen Sie im **Microsoft Purview**-Portal unter der Gruppe **Informationsschutz** im Navigationsbereich **Bezeichnungen** aus. 
 
 3. Wählen Sie auf der Seite **Bezeichnungen** in der Liste der Bezeichnungen den rechten Pfeil (**>**) neben **Streng vertraulich** aus, um die untergeordneten Bezeichnungen unter dieser Bezeichnung anzuzeigen. Dadurch wird die bereits vorhandene **Project – Falcon**-Bezeichnung angezeigt.
 
@@ -244,7 +244,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 4. Wählen Sie in **Outlook im Web** im oberen linken Teil des Bildschirms **Neue E-Mail** aus.
 
-5. Geben Sie im rechten Bereich die folgenden Informationen im E-Mail-Formular ein:
+5. Geben Sie die folgenden Informationen in das E-Mail-Formular ein:
 
     - In folgende Zeichenfolge: Geben Sie **Joni** ein, und wählen Sie dann **Joni Sherman** aus der Benutzerliste aus. 
 
