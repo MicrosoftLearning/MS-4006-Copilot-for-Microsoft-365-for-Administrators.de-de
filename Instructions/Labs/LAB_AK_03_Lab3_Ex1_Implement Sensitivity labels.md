@@ -11,30 +11,61 @@ Um Vertraulichkeitsbezeichnungen als Teil Ihres Pilotprojekts bei Adatum zu impl
 
 **Hinweis:** Da die Umbenennung von Azure AD zu Microsoft Entra-ID noch nicht abgeschlossen ist, wurde der Azure Information Protection-Client in diesem Dokument noch nicht umbenannt. Zu einem bestimmten Zeitpunkt wird er dann in den Microsoft Entra ID Protection-Client umbenannt.
 
-1. Am Ende des vorherigen Labs waren Sie auf LON-CL2. Wechseln Sie zu **LON-CL1**.  <br/>
-
-    Sie sollten weiterhin bei LON-CL1 als lokales **Adatum\Administratorkonto** angemeldet sein, und in Ihrem Edge-Browser sollten Sie weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
+1. Sie sollten weiterhin bei LON-CL1 als lokales **Adatum\Administratorkonto** angemeldet sein, und in Ihrem Edge-Browser sollten Sie weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
 
 2. Öffnen Sie in **Microsoft Edge** eine neue Registerkarte, und geben Sie die folgende URL in die Adressleiste ein (oder nutzen Sie die Funktion Kopieren und Einfügen): **https://www.microsoft.com/en-us/download/confirmation.aspx?id=53018** <br/>
 
-    Dadurch wird der Download für den Azure Information Protection Unified Label-Client gestartet.
+    Dadurch wird der Download für den **Microsoft Purview Information Protection-Client** gestartet.
 
-3. Im Fenster **Downloads**, das oben rechts auf der Seite angezeigt wird, wird der Download der Datei **AzInfoProtection_UI.exe** angezeigt. Nachdem die Datei heruntergeladen wurde, wählen Sie den Link **Datei öffnen **aus, der unter dem Dateinamen angezeigt wird.  <br/>
-
-    **Hinweis:** Tests haben gezeigt, dass es manchmal bis zu 10 bis 15 Sekunden dauern kann, bis der **Microsoft Azure Information Protection-Assistent** geöffnet wird. Wählen Sie die Option **Datei öffnen** nicht ein zweites Mal, bis Sie sicher sind, dass der Assistent nicht gestartet wurde.
+3. Im Fenster **Downloads**, das oben rechts auf der Seite angezeigt wird, wird der Download der Datei **PurviewInfoProtection.exe** angezeigt. Nachdem die Datei heruntergeladen wurde, wählen Sie den Link **Datei öffnen **aus, der unter dem Dateinamen angezeigt wird.
 
 4. Der **Microsoft Azure Information Protection-Assistent** wird geöffnet. Wenn der Assistent nicht auf dem Desktop angezeigt wird, wählen Sie das Symbol für den Assistenten auf der Taskleiste aus, um den Assistenten anzuzeigen.
 
-5. Deaktivieren Sie im daraufhin angezeigten Fenster **Azure Information Protection-Client installieren** die **Hilfe zur Verbesserung von Azure Information Protection durch Senden von Nutzungsstatistiken an Microsoft** und aktivieren Sie dann die Schaltfläche **Ich stimme zu**.
+5. Aktivieren Sie im angezeigten Fenster **Installieren Sie den **Microsoft Purview Information Protection-Client**** des Assistenten das Kontrollkästchen **Ich bestätige, dass das AIP-Add-In für Office deinstalliert wird (erforderlich)** und deaktivieren Sie das Kontrollkästchen **Mithelfen, Microsoft Purview Information Protection zu verbessern, indem Nutzungsstatistiken an Microsoft gesendet werden**. Wählen Sie dann die Schaltfläche **Ich stimme zu** aus.
 
 6. Sobald die Installation abgeschlossen ist, wählen Sie **Schließen** aus.
 
-7. Schließen Sie in Ihrem Edge-Browser die Registerkarte **Herunterladen** in dieser Aufgabe, um den Azure Information Protection-Client herunterzuladen.
-
 Sie haben den Azure Information Protection Unified Label-Client erfolgreich auf dem virtuellen Computer LON-CL1 installiert.
 
+### Aufgabe 2 – Aktivieren von Vertraulichkeitsbezeichnungen für Dateien in SharePoint und OneDrive
 
-### Aufgabe 2 – Erstellen Sie eine Vertraulichkeitsbezeichnung
+In dieser Übung aktivieren Sie Vertraulichkeitsbezeichnungen für unterstützte Office-Dateien und PDF-Dateien in SharePoint und OneDrive. Wenn dieses Feature aktiviert ist, sehen Benutzer die Schaltfläche **Vertraulichkeit** im Menüband, damit sie Bezeichnungen anwenden können. Außerdem werden alle angewendeten Bezeichnungsnamen auf der Statusleiste angezeigt. Für SharePoint können Benutzer Vertraulichkeitsbezeichnungen auch im Detailbereich anzeigen und anwenden.
+
+Das Aktivieren dieses Features führt auch dazu, dass SharePoint und OneDrive die Inhalte von Office-Dateien verarbeiten und optional PDF-Dokumente verarbeiten können, die mithilfe einer Vertraulichkeitsbezeichnung verschlüsselt wurden. Die Bezeichnung kann in Office für das Web oder in Office-Desktop-Apps angewendet und in SharePoint und OneDrive hochgeladen oder gespeichert werden. Bis Sie dieses Feature aktivieren, können diese Dienste keine verschlüsselten Dateien verarbeiten. Dies bedeutet, dass gemeinsame Dokumenterstellung, eDiscovery, Verhinderung von Datenverlust, Suche und andere Features für die Zusammenarbeit für diese Dateien nicht funktionieren.
+
+Sie aktivieren zuerst Vertraulichkeitsbezeichnungen für Office-Onlinedateien, die in SharePoint und OneDrive gespeichert sind. Anschließend aktivieren Sie die Unterstützung für PDF-Dateien.
+
+**Hinweis:** Wie bei allen Konfigurationsänderungen auf Mandantenebene für SharePoint und OneDrive dauert es etwa 15 Minuten, bis die Änderung wirksam wird.
+
+1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein.
+
+2. In Ihrem Edge-Browser sollte weiterhin eine Registerkarte für das **Microsoft 365 Admin Center**geöffnet sein. Wenn nicht, öffnen Sie eine neue Registerkarte, und geben Sie die folgende URL ein: **https://admin.microsoft.com**.
+
+3. Wählen Sie im **Microsoft 365 Admin Center **bei Bedarf **... Alle anzeigen**. Wählen Sie **Compliance** unter der Gruppe **Admin Center** aus. Dadurch wird das Microsoft Purview-Portal auf einer neuen Registerkarte geöffnet.
+
+4. Sie aktivieren zunächst Vertraulichkeitsbezeichnungen für Office-Onlinedateien, die in SharePoint und OneDrive gespeichert sind. <br/>
+
+    Wählen Sie im **Microsoft Purview-Portal** unter dem Abschnitt **Lösungen** im Navigationsbereich **Informationsschutz** und dann **Bezeichnungen** aus.
+
+5. Auf der Seite **Bezeichnungen** sollte die folgende Meldung in der Mitte der Seite angezeigt werden: **Ihre Organisation hat die Option zum Verarbeiten von Inhalten in Office-Onlinedateien, für die verschlüsselte Vertraulichkeitsbezeichnungen verwendet wurden und die in OneDrive oder SharePoint gespeichert sind, nicht aktiviert. Sie können sie hier aktivieren, beachten Sie jedoch, dass für Multi-Geo-Umgebungen zusätzliche Konfiguration erforderlich ist.** <br/>
+
+    Unterhalb dieser Nachricht befindet sich eine Schaltfläche **Jetzt aktivieren**. Wählen Sie diese Schaltfläche aus.  <br/>
+
+    **Hinweis:** Der Befehl wird sofort ausgeführt, und wenn die Seite als nächstes aktualisiert wird, wird die Meldung oder Schaltfläche nicht mehr angezeigt.
+
+6. Jetzt aktivieren Sie den PDF-Schutz für Dateien in SharePoint und OneDrive. <br/>
+
+    Wählen Sie im **Microsoft Purview**-Portal unter **Informationsschutz** im Navigationsbereich **Automatische Bezeichnung** aus.
+
+7. Auf der Seite **Automatische Bezeichnung** sollte in der Mitte der Seite ein Banner **Schützen von PDF-Dateien mit automatischer Bezeichnung** angezeigt werden. Wählen Sie die Überschrift **PDF-Dateien mit automatischer Bezeichnung schützen** aus, um den PDF-Schutz für Dateien in SharePoint und OneDrive zu aktivieren. 
+
+8. Wählen Sie im daraufhin angezeigten Dialogfeld **Automatische Bezeichnung** die Option **Bestätigen** aus, um zu bestätigen, dass Sie den PDF-Schutz für Dateien in SharePoint und OneDrive aktivieren möchten. 
+
+    **Hinweis:** Der Befehl wird sofort ausgeführt, und wenn die Seite als nächstes aktualisiert wird, wird das Banner ** Schützen von PDFs mit automatischer Bezeichnung** nicht mehr angezeigt.
+
+9. Lassen Sie Ihren Edge-Browser zusammen mit allen Registerkarten geöffnet. 
+
+### Aufgabe 3 – Erstellen Sie eine Vertraulichkeitsbezeichnung
 
 In dieser Übung erstellen Sie eine Vertraulichkeitsbezeichnung und fügen sie der Standardrichtlinie hinzu, damit sie für alle Benutzer des Adatum-Mandanten gültig ist.
 
@@ -175,7 +206,7 @@ In dieser Übung erstellen Sie eine Vertraulichkeitsbezeichnung und fügen sie d
 45. Wählen Sie auf der Seite **Neue Richtlinie erstellt** die Option **Fertig** aus.
 
 
-### Aufgabe 3 – Zuweisen einer bereits vorhandenen Vertraulichkeitsbezeichnung zu einem Dokument
+### Aufgabe 4 – Zuweisen einer bereits vorhandenen Vertraulichkeitsbezeichnung zu einem Dokument
 
 Wie in den Anweisungen zu Beginn dieses Labs beschrieben, ist es nicht möglich, die Vertraulichkeitsbezeichnung und die Bezeichnungsrichtlinie, die Sie in der vorherigen Aufgabe erstellt haben, sofort zu testen. Dies liegt daran, dass es bis zu 24 Stunden dauert, bis eine neue Bezeichnungsrichtlinie über Microsoft 365 verteilt wird und ihre Bezeichnung in Anwendungen wie Microsoft Word und Outlook sichtbar wird.
 
@@ -230,9 +261,9 @@ Stattdessen testen Sie eine der bereits vorhandenen Vertraulichkeitsbezeichnunge
 Sie haben gerade erfolgreich ein Word-Dokument erstellt, das die streng vertrauliche Bezeichnung mit dem Titel **Projekt –Falcon** enthält. 
 
 
-### Aufgabe 4 – Schützen eines Dokuments mithilfe von Microsoft Entra ID Protection
+### Aufgabe 5 – Schützen eines Dokuments mithilfe von Microsoft Purview Information Protection
 
-Im vorherigen Vorgang haben Sie ein Word-Dokument erstellt und mit der Vertraulichkeitsbezeichnung **Projekt - Falcon** geschützt. Diese Beschriftung hat ein Wasserzeichen in das Dokument eingefügt. In dieser Aufgabe geben Sie das Dokument frei, das Sie mit Joni Sherman erstellt haben, und Sie werden Joni auf die Berechtigung "Schreibgeschützt" beschränken. Auf diese Weise können Sie sehen, wie Microsoft Entra ID Protection das Dokument basierend auf den von Ihnen konfigurierten Parametern schützt.
+Im vorherigen Vorgang haben Sie ein Word-Dokument erstellt und mit der Vertraulichkeitsbezeichnung **Projekt - Falcon** geschützt. Diese Beschriftung hat ein Wasserzeichen in das Dokument eingefügt. In dieser Aufgabe geben Sie das Dokument frei, das Sie mit Joni Sherman erstellt haben, und Sie werden Joni auf die Berechtigung "Schreibgeschützt" beschränken. Auf diese Weise können Sie sehen, wie Microsoft Purview Information Protection das Dokument basierend auf den von Ihnen konfigurierten Parametern schützt.
 
 Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funktioniert, senden Sie das Dokument zuerst an zwei Personen – an Joni Sherman und ihre eigene persönliche E-Mail-Adresse. Anschließend überprüfen Sie, ob Joni das Dokument nur anzeigen und nicht bearbeiten kann, und Sie überprüfen, ob Sie nicht auf das Dokument zugreifen können, da es nicht für Sie freigegeben wurde. Schließlich ändern Sie die Berechtigung für das Dokument, damit Joni es bearbeiten kann, und Sie senden dieses aktualisierte Dokument zu Testzwecken per E-Mail an sie. Der Zweck der beiden E-Mails an Joni, eine mit einem Dokumentlink, der schreibgeschützten Zugriff und eine andere mit einem Dokumentlink bietet, der die Möglichkeit zum Bearbeiten des Dokuments bietet, besteht darin, zu sehen, wie Microsoft Entra ID Protection verschiedene Ebenen des Dokumentschutzes bieten kann. 
 
@@ -242,7 +273,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 3. Klicken Sie auf der Seite **Apps** mit der rechten Maustaste auf die Kachel **Outlook**, und wählen Sie **In neuer Registerkarte öffnen** aus. Dadurch wird das Postfach von Holly in Outlook im Web auf einer neuen Browserregisterkarte geöffnet. 
 
-4. Wählen Sie in **Outlook im Web** im oberen linken Teil des Bildschirms **Neue E-Mail** aus.
+4. Wählen Sie in **Outlook im Web** oben auf dem Bildschirm **Neue E-Mail** aus.
 
 5. Geben Sie die folgenden Informationen in das E-Mail-Formular ein:
 
@@ -268,7 +299,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 11. Zeigen Sie im Fenster ** "ProtectedDocument1" teilen** mit der Maus auf das Symbol "Auge", das rechts neben dem Namen von Joni angezeigt wird. Dadurch sollte **Kann anzeigen** angezeigt werden. Dabei handelt es sich um die aktuelle Einstellung, die Sie für dieses Dokument zugewiesen haben. Das Symbol "Auge" ist die Bezeichnung für "Kann anzeigen". Wählen Sie die Schaltfläche **Link kopieren** aus. 
 
-12. Sobald die Nachricht **Link kopiert** unten im Fenster ** "ProtectedDocument1" teilen** angezeigt wird, wählen Sie das X in der oberen rechten Ecke des Fensters aus, um es zu schließen.
+12. Sobald die Nachricht **Link kopiert** unten im Fenster ** "ProtectedDocument1" teilen** angezeigt wird, wählen Sie das X in der oberen Ecke des Fensters aus, um es zu schließen.
 
 13. Wählen Sie in Ihrem Edge-Browser die Registerkarte **Mail - Holly Dickson -Outlook** aus, um zu Ihrer E-Mail-Nachricht zurückzukehren. Fügen Sie im Textkörper der Nachricht unter dem zuvor hinzugefügten Text (STRG+V) in den Link zum freigegebenen Dokument ein, den Sie soeben in die Zwischenablage kopiert haben. Ein Link für die Datei mit dem Namen **ProtectedDocument1.docx** sollte angezeigt werden. 
 
@@ -286,7 +317,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 20. Geben Sie im Fenster **Anmelden** **JoniS@xxxxxZZZZZZ.onmicrosoft** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter bereitgestellte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus.
 
-21. Geben Sie im Fenster **Passwort eingeben** das von Ihrem Labor-Hosting-Anbieter bereitgestellte **Benutzerkennwort** ein und wählen Sie dann **Anmelden**. Führen Sie bei Bedarf den MFA-Anmeldevorgang aus.
+21. Geben Sie im Fenster **Kennwort eingeben** das neue Benutzerkennwort ein, das Sie zuvor dem Konto von Joni zugewiesen haben, und wählen Sie dann **Anmelden** aus. 
 
 22. Wenn ein **Willkommensfenster** angezeigt wird, wählen Sie das X aus, um es zu schließen.
 
@@ -340,7 +371,7 @@ Um zu überprüfen, ob der Schutz, den Sie dem Dokument zugewiesen haben, funkti
 
 36. Wenn Joni nur die Berechtigung "Schreibgeschützt" hatte, wurde das Dokument im Leseansichtsbereich geöffnet. Daher konnte Joni das Dokument nicht bearbeiten. Diese Version des Dokuments stellt Joni die Berechtigung "Bearbeiten" bereit. Dieses Mal sollte das Dokument in Word im normalen Bearbeitungsmodus geöffnet werden. Stellen Sie sicher, dass Sie Text in das Dokument eingeben können. 
 
-    **Hinweis:**  In dieser Aufgabe haben Sie gerade überprüft, dass Microsoft Entra ID Protection das Dokument basierend auf den von Ihnen konfigurierten PII-Richtlinienparametern geschützt hat. Als Joni nur die Berechtigung "Schreibgeschützt" zugewiesen wurde, wurde das Dokument in der Leseansicht geöffnet und sie konnte es nicht ändern. Als Joni die Berechtigung "Bearbeiten" zugewiesen wurde, wurde das Dokument in Word geöffnet und sie konnte es ändern. Da Holly das Dokument nicht für Sie freigegeben hat, konnten Sie es nicht öffnen, als sie das Dokument in einer E-Mail an Ihr persönliches Postfach gesendet hat. 
+    **Hinweis:**  In dieser Aufgabe haben Sie gerade überprüft, dass Microsoft Purview Information Protection das Dokument basierend auf den von Ihnen konfigurierten PII-Richtlinienparametern geschützt hat. Als Joni nur die Berechtigung "Schreibgeschützt" zugewiesen wurde, wurde das Dokument in der Leseansicht geöffnet und sie konnte es nicht ändern. Als Joni die Berechtigung "Bearbeiten" zugewiesen wurde, wurde das Dokument in Word geöffnet und sie konnte es ändern. Da Holly das Dokument nicht für Sie freigegeben hat, konnten Sie es nicht öffnen, als sie das Dokument in einer E-Mail an Ihr persönliches Postfach gesendet hat. 
 
 ## Ende von Lab 3
 
